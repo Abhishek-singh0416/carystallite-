@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services - Crystallite InfoTek & FinTech Solutions</title>
+  <meta name="description" content="Explore Crystallite InfoTek (web, apps, cloud, AI, analytics, SEO) and Crystallite FinTech (GST, accounting, audits, compliance). Request a precise quote via WhatsApp." />
+  <meta name="keywords" content="Crystallite Services, InfoTek, FinTech, web development price, GST filing, tax filing, app development cost, SEO price" />
+  <link rel="canonical" href="https://crystallite.in/services.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #071021;
+      --panel: #091221;
+      --accent-infotek: #22d3ee;
+      --accent-fintech: #7ce08a;
+      --muted: #9aa3ad;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 14px;
+      --nav-height: 56px;
+    }
+
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg,#071021 0%, #0b0f19 100%);
+      color: #eaf6ff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:focus, button:focus, .service:focus {
+      outline: 2px solid var(--accent-infotek);
+      outline-offset: 2px;
+    }
+
+    /* Crystal floating background */
+    .crystal-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .crystal {
+      position: absolute;
+      border-radius: 28% 72% 47% 53%;
+      filter: blur(36px);
+      opacity: .95;
+      transform: translate3d(0,0,0);
+      mix-blend-mode: screen;
+    }
+    .crystal.c1 {
+      width: 360px;
+      height: 360px;
+      left: -60px;
+      top: -40px;
+      background: linear-gradient(135deg, rgba(34,211,238,0.22), rgba(99,102,241,0.18));
+      animation: float1 16s ease-in-out infinite alternate;
+    }
+    .crystal.c2 {
+      width: 420px;
+      height: 420px;
+      right: -80px;
+      top: 60%;
+      background: linear-gradient(135deg, rgba(124,58,237,0.18), rgba(34,211,238,0.16));
+      animation: float1 20s ease-in-out infinite alternate;
+    }
+    .crystal.c3 {
+      width: 240px;
+      height: 240px;
+      left: 40%;
+      bottom: -40px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.16), rgba(34,197,240,0.16));
+      animation: float1 18s ease-in-out infinite alternate;
+    }
+    @keyframes float1 {
+      from {transform: translateY(0) rotate(0);}
+      to {transform: translateY(-40px) rotate(12deg);}
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--accent-infotek);
+      text-shadow: 0 0 8px rgba(34,211,238,0.14);
+      user-select: none;
+    }
+    /* Hamburger for mobile */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 3px;
+      background-color: #eaf6ff;
+      border-radius: 2px;
+      margin-bottom: 5px;
+      transition: 0.3s;
+    }
+    .nav-toggle span:last-child {
+      margin-bottom: 0;
+    }
+    /* Navigation links container */
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .nav-right ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    .nav-right a {
+      color: #eaf6ff;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.18s ease-in-out;
+      display: inline-block;
+      user-select: none;
+    }
+    .nav-right a:hover, .nav-right a:focus {
+      background: rgba(255,255,255,0.02);
+      color: var(--accent-infotek);
+      box-shadow: 0 6px 20px rgba(34,211,238,0.06);
+      outline: none;
+    }
+    .nav-right a[aria-current="page"] {
+      color: var(--accent-infotek);
+      font-weight: 700;
+    }
+    .nav-cta {
+      margin-left: 12px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--accent-infotek), #7dd3fc);
+      color: #041021;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease;
+    }
+    .nav-cta:hover, .nav-cta:focus {
+      background: linear-gradient(90deg, #14b8d6, #3b82f6);
+      outline: none;
+    }
+
+    /* Show mobile menu when toggled */
+    .nav-right.active ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--panel);
+      position: absolute;
+      right: 20px;
+      top: var(--nav-height);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      width: 220px;
+      max-width: 90vw;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 48px 24px 8px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 34px;
+      margin: 8px 0 6px;
+      text-shadow: 0 0 8px rgba(34,211,238,0.16);
+      line-height: 1.2;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 920px;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 20px 12px 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+      cursor: pointer;
+      font-weight: 600;
+      color: #eaf6ff;
+      transition: all 0.22s ease-in-out;
+      user-select: none;
+      min-width: 140px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: linear-gradient(90deg, var(--accent-infotek), #7dd3fc);
+      color: #001021;
+      box-shadow: 0 10px 28px rgba(34,211,238,0.06);
+      border-color: transparent;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1150px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+    }
+
+    /* Service list */
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .service {
+      padding: 16px 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      user-select: none;
+    }
+    .service:hover, .service:focus-visible {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(34,211,238,0.12);
+      outline: none;
+    }
+    .service h3 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--accent-infotek);
+      text-shadow: 0 0 8px rgba(34,211,238,0.06);
+    }
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.3;
+      flex-grow: 1;
+    }
+    .price {
+      font-weight: 700;
+      color: #c8ffff;
+      margin-top: auto;
+      font-size: 0.95rem;
+    }
+
+    /* Detail panel */
+    .detail h3 {
+      margin-top: 0;
+      color: var(--accent-infotek);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .detail .sub {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .detail ul {
+      margin: 8px 0 12px 20px;
+      color: #dffeff;
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
+    .detail .wa-btn {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+      color: #021015;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+    }
+    .detail .wa-btn.infotek {
+      background: linear-gradient(90deg, #22d3ee, #60a5fa);
+      color: #001021;
+    }
+    .detail .wa-btn:hover, .detail .wa-btn:focus {
+      background: linear-gradient(90deg, #16a34a, #15803d);
+      outline: none;
+    }
+    .detail .wa-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* Sidebar */
+    aside .card-title {
+      font-weight: 700;
+      color: var(--accent-infotek);
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+    .muted {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px 18px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-right ul {
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .nav-right.active ul {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        width: auto;
+        max-width: none;
+        flex-direction: row;
+        gap: 12px;
+      }
+      nav {
+        padding: 0 16px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      /* Show hamburger and hide nav menu */
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-right {
+        position: relative;
+      }
+      .nav-right ul {
+        display: none;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+      .tab-btn {
+        min-width: 120px;
+        padding: 8px 18px;
+        font-size: 0.9rem;
+      }
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+      .service {
+        padding: 14px 12px;
+      }
+      .detail h3 {
+        font-size: 1.1rem;
+      }
+      .detail .wa-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Crystal background -->
+<div class="crystal-bg" aria-hidden="true">
+  <div class="crystal c1"></div>
+  <div class="crystal c2"></div>
+  <div class="crystal c3"></div>
+</div>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-left">
+    <div class="logo" aria-hidden="false">Crystallite</div>
+  </div>
+
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-right" id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" aria-current="page">Services</a></li>
+      <li><a href="quotation.html">Get Quotation</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" role="banner">
+  <h1>Services — Crystallite InfoTek & FinTech</h1>
+  <p class="muted">Choose InfoTek for technology & product engineering, or FinTech for CA, compliance and financial advisory. Click a service and use <strong>Get Precise Price</strong> to message us on WhatsApp for a tailored quote.</p>
+</header>
+
+<!-- Tabs -->
+<div style="text-align:center;margin-top:8px">
+  <button class="tab-btn active" id="tab-infotek" data-tab="infotek" aria-pressed="true">InfoTek (Technology)</button>
+  <button class="tab-btn" id="tab-fintech" data-tab="fintech" aria-pressed="false">FinTech (Finance & CA)</button>
+</div>
+
+<!-- Content -->
+<main class="container" role="main">
+
+  <div class="grid" aria-live="polite">
+
+    <!-- Left: Services -->
+    <section class="panel" id="infotek-panel" data-domain="infotek" aria-labelledby="tab-infotek" role="region">
+      <h2 class="service-title">Crystallite InfoTek — Technology Services</h2>
+
+      <div class="service-list" id="infotek-list">
+        <!-- Service item format: data-service, data-phone will be used by JS -->
+        <article class="service" data-service="Web & App Development" data-phone="7669486641" tabindex="0">
+          <h3>Web & App Development</h3>
+          <p>Websites (static/dynamic), web apps, PWAs, Android/iOS (native & cross-platform), e-commerce & CMS solutions.</p>
+          <div class="price">Starting ₹5,000 (static) · Apps from ₹1,50,000</div>
+        </article>
+
+        <article class="service" data-service="Software Engineering & Product Development" data-phone="7669486641" tabindex="0">
+          <h3>Software Engineering & Product Development</h3>
+          <p>MVPs, APIs, microservices, full-stack engineering and SaaS products.</p>
+          <div class="price">Starting ₹25,000</div>
+        </article>
+
+        <article class="service" data-service="UI/UX & Creative Design" data-phone="7669486641" tabindex="0">
+          <h3>UI/UX & Creative Design</h3>
+          <p>Research, wireframes, prototypes, UI systems and branding.</p>
+          <div class="price">Starting ₹8,000</div>
+        </article>
+
+        <article class="service" data-service="Cloud, DevOps & Hosting" data-phone="7669486641" tabindex="0">
+          <h3>Cloud, DevOps & Hosting</h3>
+          <p>AWS/GCP/Azure architecture, CI/CD pipelines, containerization & managed hosting.</p>
+          <div class="price">Starting ₹10,000 (setup)</div>
+        </article>
+
+        <article class="service" data-service="Maintenance & Support" data-phone="7669486641" tabindex="0">
+          <h3>Maintenance & Support</h3>
+          <p>SLA-based support, updates, monitoring, backups and security patches.</p>
+          <div class="price">From ₹3,000 / month</div>
+        </article>
+
+        <article class="service" data-service="Data & Analytics" data-phone="7669486641" tabindex="0">
+          <h3>Data & Analytics</h3>
+          <p>Dashboards, BI, ETL, data engineering and predictive analytics.</p>
+          <div class="price">Starting ₹15,000</div>
+        </article>
+
+        <article class="service" data-service="AI, Automation & Machine Learning" data-phone="7669486641" tabindex="0">
+          <h3>AI, Automation & ML</h3>
+          <p>Chatbots, RPA, ML model integration, automation of business processes.</p>
+          <div class="price">Starting ₹40,000</div>
+        </article>
+
+        <article class="service" data-service="Cybersecurity" data-phone="7669486641" tabindex="0">
+          <h3>Cybersecurity</h3>
+          <p>Penetration testing, vulnerability assessment, compliance & hardening.</p>
+          <div class="price">Starting ₹20,000</div>
+        </article>
+
+        <article class="service" data-service="SEO & Digital Marketing" data-phone="7669486641" tabindex="0">
+          <h3>SEO & Digital Marketing</h3>
+          <p>Technical SEO, content, paid campaigns, social media & performance marketing.</p>
+          <div class="price">From ₹10,000 / month</div>
+        </article>
+
+        <article class="service" data-service="IT Consulting" data-phone="7669486641" tabindex="0">
+          <h3>IT Consulting</h3>
+          <p>Technology strategy, architecture reviews and digital transformation advisory.</p>
+          <div class="price">From ₹15,000</div>
+        </article>
+
+        <article class="service" data-service="Quality Assurance & Testing" data-phone="7669486641" tabindex="0">
+          <h3>Quality Assurance & Testing</h3>
+          <p>Manual & automated tests, API testing, load & security testing.</p>
+          <div class="price">From ₹10,000</div>
+        </article>
+
+        <article class="service" data-service="Specialized Industry Solutions" data-phone="7669486641" tabindex="0">
+          <h3>Specialized Industry Solutions</h3>
+          <p>CRM, ERP, POS, HRM, healthcare & education platforms — custom builds.</p>
+          <div class="price">Custom pricing</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Right: Detail & CTA -->
+    <aside>
+      <div class="panel" id="detail-panel" aria-live="polite">
+        <div class="detail" id="detail-default">
+          <h3>Service Details</h3>
+          <p class="sub muted">Select any service on the left to view details and request a precise price using WhatsApp. We route InfoTek & FinTech enquiries to the right teams for fast replies.</p>
+          <p class="wa-note muted">Note: initial consultation is free. Final quote provided after scoping.</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <div class="card-title">Quick Links</div>
+        <p class="muted" style="margin:8px 0">Prefer email? <a href="contact.html" style="color:var(--accent-infotek)">Contact Form</a></p>
+        <p class="muted" style="margin:8px 0">Or use: <strong>Get Quotation</strong> page for detailed multi-step estimates.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FinTech panel (hidden by default) -->
+  <section class="panel" id="fintech-panel" data-domain="fintech" aria-labelledby="tab-fintech" role="region" style="margin-top:28px;display:none">
+    <h2 class="service-title">Crystallite FinTech — Financial & CA Services</h2>
+
+    <div class="service-list" id="fintech-list">
+      <article class="service" data-service="GST Services" data-phone="9229247947" tabindex="0">
+        <h3>GST Services</h3>
+        <p>Registration, filing, reconciliation, E-invoice & advisory.</p>
+        <div class="price">From ₹499 / month</div>
+      </article>
+
+      <article class="service" data-service="Income Tax Services" data-phone="9229247947" tabindex="0">
+        <h3>Income Tax Services</h3>
+        <p>Individual & corporate ITR, tax planning, TDS & representation.</p>
+        <div class="price">From ₹7,000</div>
+      </article>
+
+      <article class="service" data-service="Accounting & Bookkeeping" data-phone="9229247947" tabindex="0">
+        <h3>Accounting & Bookkeeping</h3>
+        <p>Routine accounting, ledgers, financial statements & payroll.</p>
+        <div class="price">From ₹10,000 / month</div>
+      </article>
+
+      <article class="service" data-service="Business Registrations" data-phone="9229247947" tabindex="0">
+        <h3>Business Registrations & Compliance</h3>
+        <p>Company / LLP / MSME / licenses and DSC support.</p>
+        <div class="price">Varies by registration</div>
+      </article>
+
+      <article class="service" data-service="ROC / MCA Compliance" data-phone="9229247947" tabindex="0">
+        <h3>ROC / MCA Compliance</h3>
+        <p>Annual filings, DIR-3 KYC, AOC-4, MGT-7 & share management.</p>
+        <div class="price">From ₹6,000</div>
+      </article>
+
+      <article class="service" data-service="Auditing Services" data-phone="9229247947" tabindex="0">
+        <h3>Auditing Services</h3>
+        <p>Statutory, tax, internal, stock & process audits.</p>
+        <div class="price">From ₹20,000</div>
+      </article>
+
+      <article class="service" data-service="Financial Advisory & Consulting" data-phone="9229247947" tabindex="0">
+        <h3>Financial Advisory & Consulting</h3>
+        <p>Fundraising, cashflow planning, valuation, investment advisory.</p>
+        <div class="price">Custom pricing</div>
+      </article>
+
+      <article class="service" data-service="Payroll & HR Compliance" data-phone="9229247947" tabindex="0">
+        <h3>Payroll, PF/ESI & HR Compliance</h3>
+        <p>Payroll processing, PF/ESI filing, statutory compliance & reports.</p>
+        <div class="price">From ₹999 / month</div>
+      </article>
+
+      <article class="service" data-service="Specialized Financial Services" data-phone="9229247947" tabindex="0">
+        <h3>Specialized Financial Services</h3>
+        <p>CMA sheets, project reports, loan documentation & forecasts.</p>
+        <div class="price">Custom pricing</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" style="text-align:center;padding:28px 18px;margin-top:28px;color:var(--muted)">
+  © 2025 Crystallite — InfoTek & FinTech. All rights reserved.
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Navigation toggle for mobile
+  const navToggle = document.querySelector('.nav-toggle');
+  const navRight = document.querySelector('.nav-right');
+
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    navRight.classList.toggle('active');
+  });
+
+  // Tab switching
+  const tabInfotek = document.getElementById('tab-infotek');
+  const tabFintech = document.getElementById('tab-fintech');
+  const infotekPanel = document.getElementById('infotek-panel');
+  const fintechPanel = document.getElementById('fintech-panel');
+  const detailPanel = document.getElementById('detail-panel');
+
+  tabInfotek.addEventListener('click', () => {
+    tabInfotek.classList.add('active');
+    tabFintech.classList.remove('active');
+    tabInfotek.setAttribute('aria-pressed', 'true');
+    tabFintech.setAttribute('aria-pressed', 'false');
+    infotekPanel.style.display = 'block';
+    fintechPanel.style.display = 'none';
+    // scroll to top of services area
+    infotekPanel.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  tabFintech.addEventListener('click', () => {
+    tabFintech.classList.add('active');
+    tabInfotek.classList.remove('active');
+    tabFintech.setAttribute('aria-pressed', 'true');
+    tabInfotek.setAttribute('aria-pressed', 'false');
+    fintechPanel.style.display = 'block';
+    infotekPanel.style.display = 'none';
+    fintechPanel.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  // Attach handlers to all service items
+  function attachHandlers(rootSelector){
+    const root = document.querySelector(rootSelector);
+    if(!root) return;
+    root.querySelectorAll('.service').forEach(item => {
+      item.addEventListener('click', () => onServiceSelected(item));
+      item.addEventListener('keydown', (e) => { if(e.key==='Enter' || e.key===' ') onServiceSelected(item); });
+    });
+  }
+
+  // Service selection handler
+  function onServiceSelected(item){
+    const serviceName = item.dataset.service || item.querySelector('h3')?.innerText || 'Service';
+    const phone = item.dataset.phone || '7669486641';
+    const domain = item.closest('[data-domain]') ? item.closest('[data-domain]').dataset.domain : (infotekPanel.style.display!=='none' ? 'infotek' : 'fintech');
+
+    // Build detail HTML
+    const detailHTML = `
+      <h3>${escapeHtml(serviceName)}</h3>
+      <div class="sub muted">Selected division: <strong>${domain === 'infotek' ? 'InfoTek (Technology)' : 'FinTech (Financial & CA)'}</strong></div>
+      <div class="sub">${escapeHtml(item.querySelector('p')?.innerText || '')}</div>
+      <ul>
+        <li>Clear, transparent pricing & scoped proposals</li>
+        <li>Free initial consultation — no charge</li>
+        <li>Final quote after scoping and agreement</li>
+      </ul>
+      <div>
+        <a class="wa-btn ${domain==='infotek' ? 'infotek' : ''}" href="#" id="wa-request">Get Precise Price via WhatsApp</a>
+      </div>
+      <div class="wa-note muted">You will be redirected to WhatsApp. Please include your name, email and a brief requirement in the message.</div>
+    `;
+    detailPanel.innerHTML = '<div class="detail">'+detailHTML+'</div>';
+
+    // Attach link action
+    const waBtn = document.getElementById('wa-request');
+    if(waBtn){
+      waBtn.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        openWhatsApp(phone, serviceName, domain);
+      });
+    }
+    // smooth scroll to detail
+    detailPanel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  // Build professional prefilled WhatsApp message and open wa.me
+  function openWhatsApp(phone, serviceName, domain){
+    // phone must be digits only, country code assumed +91
+    let tel = phone.replace(/\D/g,'');
+    if(tel.length === 10) tel = '91' + tel;
+    else if(tel.length === 12 && tel.startsWith('91')) tel = tel;
+    else if(tel.startsWith('+')) tel = tel.replace('+','');
+
+    const domainLabel = domain === 'infotek' ? 'Crystallite InfoTek (Technology)' : 'Crystallite FinTech (Finance & CA)';
+    const messageLines = [
+      `Hello Crystallite Team,`,
+      ``,
+      `I am interested in your service: *${serviceName}*`,
+      `Division: ${domainLabel}`,
+      ``,
+      `Please provide a detailed quotation and a free consultation call.`,
+      ``,
+      `My details:`,
+      `Name: `,
+      `Company: `,
+      `Phone: `,
+      `Email: `,
+      ``,
+      `Preferred timeline: `,
+      ``,
+      `Thank you,`
+    ];
+    const message = encodeURIComponent(messageLines.join('\n'));
+    const url = `https://wa.me/${tel}?text=${message}`;
+
+    // open in new tab
+    window.open(url, '_blank');
+  }
+
+  // Escape helper for safety in HTML injection
+  function escapeHtml(str){
+    if(!str) return '';
+    return str.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+  }
+
+  // Initialize event handlers
+  attachHandlers('#infotek-list');
+  attachHandlers('#fintech-list');
+  
+  // Accessibility: allow focusing service items by keyboard
+  document.querySelectorAll('.service').forEach(s => s.setAttribute('tabindex','0'));
+</script>
+
+</body>
+</html>
