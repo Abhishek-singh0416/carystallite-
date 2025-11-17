@@ -30,7 +30,8 @@
     nav.primary{display:flex;gap:12px;align-items:center}
     nav.primary a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
     nav.primary a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
-    .hamburger{display:none;border:0;background:transparent;color:var(--text);font-size:20px;cursor:pointer}
+    .hamburger{display:none;border:0;background:transparent;color:var(--text);font-size:20px;cursor:pointer;transition:all 0.3s ease;padding:8px 12px;border-radius:8px}
+    .hamburger:hover{color:var(--accent);background:rgba(255,255,255,0.05)}
 
     .container {
       max-width: 920px;
@@ -74,6 +75,37 @@
     .estTotal { font-size: 26px; font-weight: 900; margin-top: 12px; }
     #status { margin-top: 12px; font-size: 13px; color: var(--muted); }
 
+    /* Mobile Menu */
+    #mobileMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    #mobileMenu.show {
+      max-height: 400px;
+    }
+    #mobileMenu .card {
+      padding: 10px 0;
+    }
+    #mobileMenu a {
+      display: block;
+      padding: 12px 18px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.2s ease;
+    }
+    #mobileMenu a:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--accent);
+      padding-left: 24px;
+    }
+    #mobileMenu a:last-child {
+      border-bottom: none;
+    }
+
     /* Responsive */
     @media (max-width:1100px){ .split{grid-template-columns:1fr} }
     @media (max-width:820px){
@@ -97,7 +129,9 @@
     <header>
     <div class="site site-header" role="banner">
       <div class="brand" aria-label="Crystallite InfoTech">
-        <div class="logo">CI</div>
+        <div class="logo">
+          <img src="logo.png" alt="Crystallite InfoTech Logo" style="width:46px; height:46px; border-radius:10px;">
+        </div>
         <div>
           <div class="brand-title">Crystallite InfoTech</div>
           <div class="tiny muted">Gurgaon — Web, Apps, Cloud & Fintech</div>
@@ -111,15 +145,17 @@
         <a href="contact.html">Contact</a>
       </nav>
 
-      <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">☰</button>
+      <button class="hamburger" id="navToggle" aria-label="Open menu">☰</button>
     </div>
     <!-- Mobile nav -->
-    <div id="mobileMenu" class="site hidden" style="padding-bottom:12px">
-      <div class="card" style="margin:10px 18px;">
-        <a href="index.html" style="display:block;padding:8px 0;color:var(--text)">Home</a>
-        <a href="services.html" style="display:block;padding:8px 0;color:var(--text)">Services</a>
-        <a href="projects.html" style="display:block;padding:8px 0;color:var(--text)">Projects</a>
-        <a href="contact.html" style="display:block;padding:8px 0;color:var(--text)">Contact</a>
+    <div id="mobileMenu" class="site">
+      <div class="card">
+        <a href="index.html" onclick="closeMobileMenu()">Home</a>
+        <a href="service.html" onclick="closeMobileMenu()">Services</a>
+        <a href="infotech.html" onclick="closeMobileMenu()">Infotech</a>
+        <a href="fintech.html" onclick="closeMobileMenu()">FinTech</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
       </div>
     </div>
   </header>
@@ -190,6 +226,42 @@
   </div>
 
 <script>
+  /**************** MOBILE MENU ****************/
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('show');
+    navToggle.style.color = 'var(--text)';
+  }
+
+  navToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mobileMenu.classList.toggle('show');
+    
+    // Toggle hamburger color
+    if (mobileMenu.classList.contains('show')) {
+      navToggle.style.color = 'var(--accent)';
+    } else {
+      navToggle.style.color = 'var(--text)';
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  // Close menu on window resize (>820px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) {
+      closeMobileMenu();
+    }
+  });
+
   /**************** CONFIGURATION ****************/
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcH0NQqja7xf9LNF451m1CI7nqfgKLmzTh86gmDgTDYeDQTHvYgsnK3CdVB8QwX-RP/exec"; // <— replace with your Google Apps Script URL
   const WHATSAPP_NUMBER = "917669486641";
