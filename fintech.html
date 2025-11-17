@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A2647" />
+
+    <!-- SEO META TAGS -->
+    <title>Crystallite FinTech | CA, Accounting, GST, Compliance, Tax Filing & Financial Services</title>
+    <meta name="description" content="Crystallite FinTech provides CA Services, GST filing, tax consultancy, accounting, auditing, compliance, ROC filings, startup registrations, business finance advisory and more. Trusted financial partner for SMEs & Startups in India." />
+    <meta name="keywords" content="Crystallite FinTech, best CA services India, accounting services, GST filing, company registration, ROC compliance, tax filing, audit services, financial consulting, CMA report, income tax return, TDS filing, bookkeeping services" />
+    <meta name="author" content="Crystallite FinTech" />
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Crystallite FinTech – Trusted CA & Financial Services" />
+    <meta property="og:description" content="Expert CA, accounting, GST filing, audit & compliance services for businesses and startups in India." />
+    <meta property="og:image" content="https://yourdomain.com/fintech-banner.jpg" />
+    <meta property="og:type" content="website" />
+
+    <!-- STRUCTURED DATA (SCHEMA) -->
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"FinancialService",
+        "name":"Crystallite FinTech",
+        "url":"https://yourdomain.com/fintech",
+        "description":"Professional CA, Accounting, Tax, GST and Compliance Services.",
+        "telephone":"+919229247947",
+        "address":{
+            "@type":"PostalAddress",
+            "addressCountry":"IN"
+        },
+        "areaServed":"India"
+    }
+    </script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- FONTAWESOME for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" href="logo.png">
+
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #F8FBFF;
+            color: #0A2647;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+        a:hover {
+            color: #4FC3F7;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0A2647;
+            color: white;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        nav h2 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+
+        /* Desktop Menu */
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline-block;
+        }
+        .nav-links li a {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-links li a:hover,
+        .nav-links li a:focus {
+            background-color: #4FC3F7;
+            color: #0A2647;
+            outline: none;
+        }
+
+        /* Call to Action Button */
+        .nav-cta {
+            background-color: #4FC3F7;
+            color: #0A2647;
+            border: none;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-cta:hover,
+        .nav-cta:focus {
+            background-color: #81D4FA;
+            outline: none;
+        }
+
+        /* Hamburger menu - hidden on desktop */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: white;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(to right, #0A2647, #144272, #205295);
+            padding: 120px 40px;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+            user-select: none;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-top: 0;
+            opacity: 0.9;
+        }
+        .hero .btn {
+            margin-top: 30px;
+            background: #4FC3F7;
+            color: #0A2647;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(79, 195, 247, 0.75);
+            transition: box-shadow 0.3s ease;
+            display: inline-block;
+            user-select: none;
+        }
+        .hero .btn:hover,
+        .hero .btn:focus {
+            background: #81D4FA;
+            box-shadow: 0 6px 20px rgba(129, 212, 250, 0.9);
+            outline: none;
+        }
+
+        /* SECTIONS GENERAL */
+        .section {
+            padding: 70px 40px;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* SERVICES / PROJECTS GRID */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: default;
+        }
+        .service-card:hover,
+        .service-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            outline: none;
+        }
+        .service-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #0A2647;
+            font-weight: 600;
+        }
+        .service-card p {
+            flex-grow: 1;
+            font-size: 15px;
+            line-height: 1.4;
+            color: #333;
+        }
+        .service-price {
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #144272;
+        }
+        .service-card .btn {
+            margin-top: 20px;
+            align-self: start;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #4FC3F7;
+            color: #0A2647;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        .service-card .btn:hover,
+        .service-card .btn:focus {
+            background: #81D4FA;
+            outline: none;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #EAF6FF;
+            padding: 80px 40px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 25px 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            color: #0A2647;
+            font-style: italic;
+            user-select: text;
+        }
+        .testimonial-card p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .testimonial-card strong {
+            display: block;
+            text-align: right;
+            font-weight: 600;
+            font-style: normal;
+            color: #144272;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #0A2647;
+            padding: 70px 40px;
+            color: white;
+            text-align: center;
+            user-select: none;
+        }
+        .contact h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        .contact .btn {
+            background: white;
+            color: #0A2647;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+        .contact .btn:hover,
+        .contact .btn:focus {
+            background: #e0e0e0;
+            outline: none;
+        }
+        .contact p strong {
+            font-weight: 700;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE NAVIGATION */
+        @media (max-width: 900px) {
+            nav {
+                padding: 10px 20px;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 250px;
+                background: #0A2647;
+                flex-direction: column;
+                padding-top: 60px;
+                gap: 20px;
+                z-index: 100001;
+                overflow-y: auto;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-links li {
+                width: 100%;
+                padding-left: 20px;
+            }
+            .nav-links li a {
+                font-size: 18px;
+                padding: 10px 12px;
+                display: block;
+                width: 100%;
+                border-radius: 0;
+            }
+            .nav-cta {
+                display: none;
+            }
+
+            /* Hamburger visible */
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 90px 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section {
+                padding: 50px 20px;
+            }
+            .section h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav role="navigation" aria-label="Main navigation">
+    <h2>Crystallite FinTech</h2>
+    <button aria-label="Open menu" class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="primary-navigation">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="primary-navigation">
+        <li><a href="index.html" tabindex="0">home</a></li>
+        <li><a href="service.html" tabindex="0">Services</a></li>
+        <li><a href="infotech.html" tabindex="0">Infotech</a></li>
+        <li><a href="fintech.html" tabindex="0">FinTech</a></li>
+        <li><a href="about.html" tabindex="0">About</a></li>
+        <li><a href="Contact.html" tabindex="0">Contact</a></li>
+        <li>
+            <button class="nav-cta" type="button" onclick="window.location.href='consultation.html'" tabindex="0">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Get free consultation</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" role="banner" aria-label="Introduction">
+    <h1>India’s Trusted CA & Financial Service Partner</h1>
+    <p>Expert GST, Tax Filing, Accounting, Auditing, Compliance & Business Finance Solutions.</p>
+    <a class="btn" href="https://wa.me/9229247947?text=Hello%2C%20I%20need%20financial%20and%20CA%20related%20services.%20Please%20guide%20me." aria-label="Contact via WhatsApp">Contact via WhatsApp</a>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Financial & CA Services</h2>
+
+    <div class="services-container">
+        <article class="service-card" tabindex="0">
+            <h3>GST Filing & Compliance</h3>
+            <p>Monthly, quarterly, yearly GST returns, reconciliation & compliance management.</p>
+            <p class="service-price">Starting at ₹1,000/month</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20need%20GST%20Filing%20and%20Compliance%20Services.%20Please%20provide%20consultation." aria-label="Get GST filing consultation via WhatsApp">Get Consultation</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+            <h3>Accounting & Bookkeeping</h3>
+            <p>Professional accounting, ledger management, payroll & financial reporting.</p>
+            <p class="service-price">Starting at ₹2,500/month</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20need%20Accounting%20and%20Bookkeeping%20Services." aria-label="Get accounting consultation via WhatsApp">Get Consultation</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+            <h3>Income Tax Return Filing</h3>
+            <p>Individual, salaried, business & NRI ITR filing with expert review.</p>
+            <p class="service-price">Starting at ₹800</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20want%20to%20file%20ITR.%20Please%20assist%20me." aria-label="File Income Tax Return via WhatsApp">File ITR</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+            <h3>Audit & Assurance</h3>
+            <p>Internal audit, statutory audit, GST audit & business verification.</p>
+            <p class="service-price">Starting at ₹12,000</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20need%20Audit%20Services.%20Please%20provide%20details." aria-label="Get audit support via WhatsApp">Get Audit Support</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+            <h3>Company Registration</h3>
+            <p>Pvt Ltd, LLP, MSME, GST Registration & Startup India support.</p>
+            <p class="service-price">Starting at ₹4,999</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20want%20Company%20Registration.%20Please%20guide%20me." aria-label="Register company via WhatsApp">Register Now</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+            <h3>Financial Consulting</h3>
+            <p>CMA reports, projected balance sheets, loan documentation & planning.</p>
+            <p class="service-price">Starting at ₹5,000</p>
+            <a class="btn" href="https://wa.me/9229247947?text=I%20need%20Financial%20Consulting%20Services." aria-label="Get financial consulting via WhatsApp">Get Expert Advice</a>
+        </article>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Case Studies & Completed Projects</h2>
+    <div class="services-container">
+        <article class="service-card" tabindex="0">
+            <h3>GST Automation for Retail Chain</h3>
+            <p>Automated GST computations & filing workflow. Reduced manual work by 92% and saved 200+ hours every month.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Accounting Setup for Tech Startup</h3>
+            <p>Implemented complete bookkeeping, payroll, GST, and MIS reporting system for a new-age startup.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>ITR Management for 350+ Clients</h3>
+            <p>Executed bulk ITR filing with verification, refund tracking, and compliance health checks.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Financial Rescue for a Manufacturing Firm</h3>
+            <p>Diagnosed financial leakages, optimized tax structure & reduced losses. Achieved 14% profit turnaround in 6 months.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>GST Reconciliation for E-Commerce Seller</h3>
+            <p>Automated monthly reconciliation of GSTR-2A/2B with books. Cleared mismatch fines & ensured 100% compliance.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Company Incorporation & Compliance Setup</h3>
+            <p>Registered a Private Limited company + GST + MSME + PF/ESI. Delivered full documentation within 10 working days.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Payroll Automation for Hospitality Brand</h3>
+            <p>Automated payroll cycles, generated salary slips, managed PF/ESI, and reduced HR workload by 70%.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Statutory Audit Support for Import/Export Firm</h3>
+            <p>Prepared audit-ready financials, reconciliations, schedules & compliance reports. Completed audit smoothly.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>CMA & Projection Reports for Loan Approval</h3>
+            <p>Created CMA data, projections & financial analysis enabling the client to secure a ₹38 lakh business loan.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>Tax Optimization for Consultancy Business</h3>
+            <p>Improved tax efficiency by 28% using legal exemptions, investment strategies & structured bookkeeping.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>ROC Compliance Recovery for Old Company</h3>
+            <p>Cleared 4 years of pending ROC filings, DIR-3 KYC, AOC-4, MGT-7 and restored complete compliance status.</p>
+        </article>
+        <article class="service-card" tabindex="0">
+            <h3>E-Invoice & E-Way Integration for Distributor</h3>
+            <p>Implemented a seamless e-invoice + e-way bill solution with automated validation and ledger mapping.</p>
+        </article>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading">Client Testimonials</h2>
+    <p style="text-align:center; font-size:14px; margin-bottom:40px; opacity:0.8;">
+        *For confidentiality, we do not disclose exact client identities. Names below are used for representation, but the feedback is 100% real.*
+    </p>
+
+    <div class="testimonials-container">
+        <div class="testimonial-card" tabindex="0">
+            <p>"Crystallite FinTech manages our GST, tax filing, compliance and payroll end-to-end. Their process is smooth and they respond instantly. Highly reliable team."</p>
+            <strong>- Rohan G., Startup Founder</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Their financial advisory helped us secure a business loan. They prepared a perfect CMA report and projection sheets. Very professional and accurate."</p>
+            <strong>- Priya J., Business Owner</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"The team saved us from heavy late fees by fixing our GST and ROC compliance on time. They monitor everything proactively so we never miss deadlines."</p>
+            <strong>- Manish K., Manufacturing Firm</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Very affordable compared to other CA firms. They provide premium service but at prices small businesses can afford. Perfect for MSMEs."</p>
+            <strong>- Shivam Enterprises</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Crystallite FinTech feels like an in-house financial team. They explain laws clearly, guide us like family, and take ownership of our filing and accounting."</p>
+            <strong>- Aditi Creations</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Earlier we used to struggle with inaccurate accounts. After switching to Crystallite, our books are clean, reconciled, and always up to date. Big improvement!"</p>
+            <strong>- Khurana Distributors</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"They reduced our tax liability legally and ethically by analyzing all possible deductions. Expert team with deep knowledge."</p>
+            <strong>- Rajesh Finance Services</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Their turnaround time is extremely fast. Whether it’s ITR filing, GST notice handling, or audit support—everything is done quickly and accurately."</p>
+            <strong>- Apex Automation</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"The team helped us with company incorporation, GST registration, and compliance setup. All documents were prepared perfectly and on time."</p>
+            <strong>- New Startup Founder</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Very transparent and trustworthy. They do not overcharge or push unnecessary services. Always give honest, practical financial advice."</p>
+            <strong>- Retail Shop Owner</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Their audit support was excellent. They prepared all financials, schedules, and compliance documents neatly. Our statutory audit completed smoothly."</p>
+            <strong>- Tech Solutions Pvt Ltd</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"We saved almost 40% time every month because Crystallite FinTech automated many of our accounting and GST processes. Huge efficiency boost!"</p>
+            <strong>- Logistics Firm</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"We were facing losses due to poor financial planning. Their team analyzed our books, guided us, and helped us turn profitable in 6 months."</p>
+            <strong>- Local Manufacturer</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Whenever we get a notice or query, they handle it calmly and professionally. No stress for us at all. Extremely dependable service."</p>
+            <strong>- Service-Based Startup</strong>
+        </div>
+        <div class="testimonial-card" tabindex="0">
+            <p>"Most CA firms are too busy to respond, but Crystallite FinTech is always available on WhatsApp and call. Supportive, friendly and very client-focused."</p>
+            <strong>- Freelance Consultant</strong>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Crystallite FinTech</h2>
+    <p>We provide expert CA, accounting, taxation, and financial consulting services.</p>
+
+    <a class="btn" style="background:white; color:#0A2647;"
+        href="https://wa.me/9229247947?text=Hello%2C%20I%20need%20financial%20and%20CA%20services.%20Please%20assist%20me."
+        aria-label="Chat on WhatsApp">
+        Chat on WhatsApp
+    </a>
+
+    <p style="margin-top:20px;">Call: <strong>+91 92292 47947</strong></p>
+    <p>Email: <strong>contact@crystallitefintech.com</strong></p>
+</section>
+
+<script>
+    // Toggle Navigation Menu on Small Screens
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinks = document.getElementById('primary-navigation');
+
+    hamburgerBtn.addEventListener('click', () => {
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('active');
+
+        // Change icon for hamburger toggling
+        if (navLinks.classList.contains('active')) {
+            hamburgerBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            hamburgerBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+    });
+
+    // Optional: Close menu when a nav link is clicked (user friendly)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', false);
+                hamburgerBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

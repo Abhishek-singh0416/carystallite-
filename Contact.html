@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contact Us | Crystallite Infotech & FinTech</title>
+    <meta name="description" content="Contact Crystallite Infotech for tech services and Crystallite FinTech for CA, accounting, GST, taxation & compliance services. Call us for expert assistance." />
+    <meta name="keywords" content="contact Crystallite Infotech, Crystallite FinTech contact, CA services Gurgaon, tech company Gurgaon, app development Gurgaon, GST consultant Gurgaon" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Crystallite Infotech & FinTech" />
+    <meta property="og:description" content="Reach our tech and financial teams for professional services." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" href="logo.png">
+
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #eef2f3;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover,
+        a:focus {
+            color: #1e40af;
+            outline: none;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            user-select: none;
+        }
+        nav .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+            user-select: none;
+        }
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li a {
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background-color: #2563eb;
+            color: #f0f9ff;
+            outline-offset: 2px;
+            outline: 2px solid #2563eb;
+        }
+        nav .nav-cta {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.7);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+        nav .nav-cta:hover,
+        nav .nav-cta:focus {
+            background-color: #1e40af;
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.9);
+            outline-offset: 2px;
+            outline: 2px solid #1e40af;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            color: white;
+            user-select: none;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 24px 60px;
+        }
+
+        /* Contact Boxes */
+        .contact-box {
+            background: white;
+            padding: 40px 36px;
+            margin-bottom: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease;
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 24px;
+            user-select: none;
+        }
+
+        .info {
+            font-size: 18px;
+            color: #334155;
+            user-select: text;
+        }
+        .info strong {
+            color: #1e3a8a;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 14px 28px;
+            margin-top: 18px;
+            font-size: 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        .whatsapp-btn:hover,
+        .whatsapp-btn:focus {
+            background: #1da955;
+            outline: none;
+        }
+
+        /* Form */
+        form {
+            width: 100%;
+            background: #ffffff;
+            padding: 36px 32px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 16px 18px;
+            margin: 14px 0;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 16px;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: border-color 0.3s ease;
+            resize: vertical;
+        }
+        form input:focus,
+        form textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+            box-shadow: 0 0 6px #2563ebaa;
+        }
+        form button {
+            width: 100%;
+            padding: 16px;
+            background: #2563eb;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+        form button:hover,
+        form button:focus {
+            background: #1e40af;
+            box-shadow: 0 0 12px #1e40afcc;
+            outline: none;
+        }
+
+        /* Map */
+        iframe {
+            width: 100%;
+            height: 360px;
+            border: none;
+            border-radius: 16px;
+            margin-top: 32px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* Responsive */
+        @media(max-width: 900px) {
+            nav {
+                flex-wrap: wrap;
+                padding: 15px 20px;
+                gap: 10px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin-top: 8px;
+            }
+            nav ul li {
+                margin: 0;
+            }
+            .container {
+                padding: 32px 16px 48px;
+            }
+            .contact-box {
+                padding: 32px 24px;
+            }
+            form input,
+            form textarea {
+                padding: 14px 16px;
+            }
+            form button {
+                padding: 14px;
+                font-size: 18px;
+            }
+            iframe {
+                height: 280px;
+                margin-top: 24px;
+            }
+        }
+
+        @media(max-width: 480px) {
+            header h1 {
+                font-size: 32px;
+            }
+            header p {
+                font-size: 18px;
+            }
+            nav {
+                justify-content: center;
+            }
+            nav .logo {
+                font-size: 24px;
+            }
+            nav ul {
+                gap: 12px;
+            }
+            nav ul li a {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 16px;
+            }
+            .container {
+                padding: 24px 12px 40px;
+            }
+            .contact-box {
+                padding: 28px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav role="navigation" aria-label="Primary navigation">
+    <div class="logo" aria-label="Crystallite Group Logo">Crystallite Group</div>
+    <ul>
+        <li><a href="index.html" tabindex="0">Home</a></li>
+        <li><a href="service.html" tabindex="0">Services</a></li>
+        <li><a href="infotech.html" tabindex="0">Infotech</a></li>
+        <li><a href="fintech.html" tabindex="0">FinTech</a></li>
+        <li><a href="about.html" tabindex="0">About</a></li>
+        <li><a href="Contact.html" tabindex="0">Contact</a></li>
+        <li>
+            <button class="nav-cta" type="button" onclick="window.location.href='consultation.html'" tabindex="0">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Get free consultation</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Contact Us</h1>
+    <p>Reach out to our Tech & FinTech teams anytime. We're here to help!</p>
+</header>
+
+<div class="container">
+
+    <!-- TECH CONTACT -->
+    <section class="contact-box" aria-labelledby="tech-contact-heading">
+        <h2 id="tech-contact-heading">📱 Crystallite Infotech — Tech Department</h2>
+        <div class="info">
+            <p><strong>Phone:</strong> <a href="tel:+917669486641" aria-label="Call Crystallite Infotech">7669486641</a></p>
+            <p><strong>Email:</strong> <a href="mailto:tech@crystalliteinfotech.com" aria-label="Email Crystallite Infotech">tech@crystalliteinfotech.com</a></p>
+            <p><strong>Services:</strong> App Development, Web Development, Maintenance, Hosting, Data Analytics</p>
+            <a class="whatsapp-btn" href="https://wa.me/7669486641" aria-label="Chat with Crystallite Infotech on WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FINTECH CONTACT -->
+    <section class="contact-box" aria-labelledby="fintech-contact-heading">
+        <h2 id="fintech-contact-heading">💼 Crystallite FinTech — CA & Accounting Department</h2>
+        <div class="info">
+            <p><strong>Phone:</strong> <a href="tel:+919229247947" aria-label="Call Crystallite FinTech">9229247947</a></p>
+            <p><strong>Email:</strong> <a href="mailto:finance@crystallitefintech.com" aria-label="Email Crystallite FinTech">finance@crystallitefintech.com</a></p>
+            <p><strong>Services:</strong> GST, Accounting, Payroll, Tax Filing, Audits, Compliance, Advisory</p>
+            <a class="whatsapp-btn" href="https://wa.me/9229247947" aria-label="Chat with Crystallite FinTech on WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="contact-box" aria-labelledby="location-heading">
+        <h2 id="location-heading">📍 Our Location (Gurgaon)</h2>
+        <p>Near RVSM School, Gurgaon, Haryana</p>
+        <iframe
+            title="Location map for Crystallite near RVSM School, Gurgaon"
+            src="https://www.google.com/maps?q=RVSM+School+Gurgaon&output=embed"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="contact-box" id="contact-form" aria-labelledby="send-message-heading">
+        <h2 id="send-message-heading">📨 Send Us a Message</h2>
+        <form action="#" method="post" novalidate>
+            <label for="name" class="sr-only">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Your Name" required aria-required="true" />
+
+            <label for="email" class="sr-only">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="Your Email" required aria-required="true" />
+
+            <label for="phone" class="sr-only">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Phone Number" />
+
+            <label for="message" class="sr-only">Your Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message..." required aria-required="true"></textarea>
+
+            <button type="submit" aria-label="Submit your message to Crystallite">Submit Message</button>
+        </form>
+    </section>
+
+</div>
+
+</body>
+</html>

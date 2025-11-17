@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crystallite InfoTech — Web Development, App Development & Cloud | Gurgaon</title>
+
+  <!-- SEO meta -->
+  <meta name="description" content="Crystallite InfoTech (Gurgaon) — End-to-end web development, mobile app development, data analytics, hosting, SEO and maintenance. Starting prices from ₹5,000 for websites and ₹25,000 for apps. Free initial consultation." />
+  <meta name="keywords" content="Crystallite InfoTech, Web Development Gurgaon, App Development Gurgaon, SEO Gurgaon, Data Analytics Gurgaon, Cloud Hosting Gurgaon, Mobile App Developer India, Website Development Price India" />
+  <meta name="author" content="Crystallite InfoTech" />
+  <link rel="canonical" href="https://crystallite.in/crystallite-infotech.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crystallite InfoTech — Web & App Development (Gurgaon)" />
+  <meta property="og:description" content="End-to-end technology partner: websites, apps, cloud, AI/analytics, maintenance & SEO. Starting prices from ₹5,000 for websites and ₹25,000 for apps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crystallite.in/crystallite-infotech.html" />
+  <meta property="og:image" content="https://crystallite.in/assets/crystallite-infotech-share.png" />
+
+  <!-- Structured Data (Organization + Service) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Crystallite InfoTech",
+    "url": "https://crystallite.in",
+    "logo": "https://crystallite.in/assets/logo.png",
+    "sameAs": [],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-7669486641",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["en","hi"]
+    }]
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="icon" href="logo.png">
+
+  <style>
+    /* ---------- Variables ---------- */
+    :root{
+      --bg:#071021;
+      --panel:#0b1724;
+      --muted:#9fb4c6;
+      --accent:#22d3ee;        /* aqua */
+      --accent2:#7dd3fc;
+      --accent3:#7ef78a;      /* green */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --shadow: 0 16px 40px rgba(2,8,23,0.7);
+      --maxw:1200px;
+      --text:#eaf6ff;
+    }
+
+    /* ---------- Reset ---------- */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#04060a);color:var(--text);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+
+    /* ---------- Layout ---------- */
+    .site {
+      max-width:var(--maxw);margin:0 auto;padding:0 18px;
+    }
+
+    /* ---------- Header ---------- */
+    header.site-header {
+      position:sticky;top:0;z-index:80;
+      background: linear-gradient(180deg, rgba(6,10,18,0.6), rgba(6,10,18,0.3));
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .site-header .wrap {
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand {display:flex;align-items:center;gap:12px}
+    .brand .logo {
+      width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6b8cff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021016;font-size:18px;box-shadow:0 12px 34px rgba(34,211,238,0.06)
+    }
+    .brand .title {font-weight:700;font-size:16px;color:var(--text)}
+    nav.primary {display:flex;gap:14px;align-items:center}
+    nav.primary a {padding:8px 10px;border-radius:8px;color:var(--text);font-weight:600}
+    nav.primary a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
+    .cta-quote {padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#011022;border:none;font-weight:800;cursor:pointer}
+
+    /* ---------- Hero ---------- */
+    .hero {display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0 24px}
+    .hero .eyebrow {color:var(--accent);font-weight:700;font-size:12px;letter-spacing:1px}
+    .hero h1 {font-size:34px;line-height:1.06;margin:8px 0 12px}
+    .hero p.lead {color:var(--muted);max-width:62ch}
+    .hero .actions {margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary {background:linear-gradient(90deg,var(--accent),var(--accent2));padding:12px 16px;border-radius:10px;border:0;font-weight:800;color:#031021;cursor:pointer}
+    .btn-ghost {background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--text);cursor:pointer}
+
+    .hero-aside {background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow)}
+    .hero-aside h4{margin:0 0 8px;color:var(--accent)}
+    .kpis{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .kpi{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:8px;font-weight:700}
+
+    /* ---------- Crystal background (subtle) ---------- */
+    .bg-crystal {position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+    .cr1{position:absolute;left:-120px;top:-80px;width:420px;height:420px;border-radius:28% 72% 53% 47%;filter:blur(36px);background:linear-gradient(135deg, rgba(34,211,238,0.18), rgba(124,58,237,0.12));animation:float1 18s infinite alternate}
+    .cr2{position:absolute;right:-140px;bottom:-60px;width:380px;height:380px;border-radius:38% 62% 48% 52%;filter:blur(28px);background:linear-gradient(135deg, rgba(125,58,237,0.12), rgba(34,211,238,0.10));animation:float1 22s infinite alternate}
+    @keyframes float1{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-36px) rotate(12deg)}}
+
+    /* ---------- Sections ---------- */
+    section {padding:36px 0}
+    .section-head {display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    .section-head h2{margin:0;color:var(--accent);font-size:22px}
+    .muted{color:var(--muted)}
+
+    /* ---------- Services cards ---------- */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .service-card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .28s,box-shadow .28s;display:flex;flex-direction:column;gap:12px;min-height:170px}
+    .service-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(2,8,23,0.6)}
+    .service-card h3{margin:0;color:#e7fbff}
+    .service-card p{margin:0;color:var(--muted)}
+    .service-meta{display:flex;align-items:center;gap:10px;margin-top:auto}
+    .badge{background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-weight:700;color:var(--accent)}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn-view{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;color:var(--accent2);cursor:pointer}
+    .btn-wa{background:linear-gradient(90deg,#22c55e,#16a34a);padding:9px 12px;border-radius:10px;border:none;color:#021018;font-weight:800;cursor:pointer}
+
+    /* ---------- Pricing table ---------- */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .pricing-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .pricing-card h4{margin:0;color:var(--accent);font-size:16px}
+    .pricing-card .cost{font-weight:900;font-size:20px;color:#eafcff;margin-top:8px}
+
+    /* ---------- Projects gallery ---------- */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .18s}
+    .project:hover{transform:translateY(-6px)}
+    .project img{border-radius:8px;height:140px;object-fit:cover}
+    .project h5{margin:8px 0 0;color:var(--accent)}
+
+    /* ---------- Estimator form ---------- */
+    .estimator{background:var(--panel);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .estimator label{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+    .estimator input,.estimator select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);margin-top:6px}
+    .est-actions{display:flex;gap:8px;margin-top:12px;align-items:center}
+    .est-result{margin-left:8px;font-weight:800;color:#cff7ff}
+
+    /* ---------- Testimonials ---------- */
+    .test-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .testimonial{background:var(--panel);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .stars{color:#ffd166}
+
+    /* ---------- Contact form ---------- */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:12px}
+    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    input, textarea {background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--text);width:100%}
+    textarea{min-height:120px;resize:vertical}
+
+    /* ---------- Footer ---------- */
+    footer.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1100px){
+      .hero{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:800px){
+      nav.primary{display:none}
+      .site-header .wrap{justify-content:space-between}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-crystal" aria-hidden="true">
+    <div class="cr1"></div>
+    <div class="cr2"></div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="site wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+      <div class="brand" role="img" aria-label="Crystallite InfoTech">
+        <div class="logo">
+        <img src="logo.png" alt="Crystallite InfoTech Logo" style="width:46px; height:46px; border-radius:10px;">
+      </div>
+        <div class="title">Crystallite InfoTech</div>
+      </div>
+
+      <nav class="primary" role="navigation" aria-label="Primary">
+        <a href="service.html">Services</a>
+        <a href="infotech.html">Infotech</a>
+        <a href="fintech.html">FinTech</a>
+        <a href="about.html">about</a>      
+        <a href="Contact.html">Contact</a>
+        <button class="cta-quote" type="button" onclick="window.location.href='consultation.html'">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Get free consultation</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site" role="main" style="padding-top:18px;">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Crystallite InfoTech — Gurgaon</div>
+        <h1 id="hero-title">Web & App Development, Data Analytics, Cloud Hosting & SEO — <span style="color:var(--accent)">We build things that scale</span></h1>
+        <p class="lead muted">We are a Gurgaon-based technology studio. We deliver client-grade websites, mobile apps, cloud infrastructure, data solutions and growth marketing to help businesses scale. Transparent pricing, documented scopes and free initial consultations.</p>
+
+        <div class="actions">
+          <button class="btn-primary" onclick="scrollToSection('services')">Explore Services</button>
+          <button class="btn-ghost" onclick="scrollToSection('projects')">See Projects</button>
+        </div>
+      </div>
+
+      <aside class="hero-aside" aria-label="Quick info">
+        <h4>Quick facts</h4>
+        <div class="kpis">
+          <div class="kpi">100+ clients</div>
+          <div class="kpi">4.8★ average</div>
+          <div class="kpi">Free consultation</div>
+        </div>
+
+        <div style="margin-top:12px;font-size:14px;color:var(--muted)">
+          <div><strong>WhatsApp:</strong> <a href="https://wa.me/917669486641" target="_blank">+91 76694 86641</a></div>
+          <div style="margin-top:6px"><strong>Location:</strong> Gurgaon (Damdama Lake Rd)</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="section-head">
+        <h2 id="services-heading">Core Services</h2>
+        <div class="muted">Clear starting prices, focused delivery and measurable outcomes</div>
+      </div>
+
+      <div class="services-grid" role="list">
+        <!-- Web dev -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="Web Development" data-price="5000">
+          <h3>Web Development</h3>
+          <p>Responsive websites, corporate sites, landing pages, e-commerce and headless CMS — optimized for performance and SEO (Gurgaon-focused SEO available).</p>
+          <div class="service-meta">
+            <div class="badge">Starts ₹5,000</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('Web Development', 5000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('Web Development',5000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- App dev -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="App Development" data-price="25000">
+          <h3>App Development</h3>
+          <p>Android & iOS apps (native & cross-platform), progressive web apps and backend systems. Includes deployment & basic app store support for standard packages.</p>
+          <div class="service-meta">
+            <div class="badge">Starts ₹25,000</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('App Development', 25000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('App Development',25000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maintenance -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="Maintenance & Support" data-price="3000">
+          <h3>Maintenance & Support</h3>
+          <p>Monthly maintenance plans with SLA options: bug fixes, security patches, monitoring, backups and small updates.</p>
+          <div class="service-meta">
+            <div class="badge">From ₹3,000 / month</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('Maintenance & Support',3000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('Maintenance & Support',3000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Analytics -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="Data & Analytics" data-price="10000">
+          <h3>Data & Analytics</h3>
+          <p>Dashboards, ETL pipelines, BI, predictive modeling and insights to drive decisions. POCs to full data platforms.</p>
+          <div class="service-meta">
+            <div class="badge">Starts ₹10,000</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('Data & Analytics',10000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('Data & Analytics',10000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hosting -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="Cloud Hosting & DevOps" data-price="10000">
+          <h3>Cloud Hosting & DevOps</h3>
+          <p>AWS / Google Cloud / Azure setup, CI/CD, Docker & Kubernetes, managed hosting and scaling strategies.</p>
+          <div class="service-meta">
+            <div class="badge">Starts ₹10,000 (setup)</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('Cloud Hosting & DevOps',10000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('Cloud Hosting & DevOps',10000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SEO -->
+        <article class="service-card" role="listitem" tabindex="0" data-service="SEO & Digital Marketing" data-price="10000">
+          <h3>SEO & Digital Marketing</h3>
+          <p>Technical SEO, local SEO for Gurgaon, content & on-page optimization, paid campaigns and conversion optimization.</p>
+          <div class="service-meta">
+            <div class="badge">From ₹10,000 / month</div>
+            <div style="flex:1"></div>
+            <div class="actions">
+              <button class="btn-view" onclick="openServiceDetail('SEO & Digital Marketing',10000)">View Projects</button>
+              <button class="btn-wa" onclick="openWhatsAppFromService('SEO & Digital Marketing',10000)">Get Precise Price</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <div class="section-head">
+        <h2 id="pricing-title">Indicative Pricing (India Market Average)</h2>
+        <div class="muted">These are indicative starting prices — final quotes are scoped & documented before work begins.</div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h4>Static Website</h4>
+          <div class="cost">₹5,000</div>
+          <div class="muted">Landing pages, brochure sites. Delivery in ~3–7 days.</div>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Dynamic / Business Website</h4>
+          <div class="cost">₹15,000</div>
+          <div class="muted">CMS, e-commerce & integrations. Delivery 1–3 weeks.</div>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Mobile App (Basic)</h4>
+          <div class="cost">₹25,000</div>
+          <div class="muted">Core features, cross-platform. Deployment included for basic packages.</div>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Analytics PoC</h4>
+          <div class="cost">₹10,000</div>
+          <div class="muted">Proof-of-concept dashboards & data pipelines.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="estimator">
+        <strong>Quick Estimator</strong>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <select id="est_service" aria-label="Estimator service">
+            <option value="web">Website (Static)</option>
+            <option value="web-dynamic">Website (Dynamic/CMS)</option>
+            <option value="app">Mobile App (Basic)</option>
+            <option value="app-advanced">Mobile App (Advanced)</option>
+            <option value="analytics">Data & Analytics</option>
+          </select>
+
+          <select id="est_complexity" aria-label="Complexity">
+            <option value="low">Low complexity</option>
+            <option value="medium">Medium complexity</option>
+            <option value="high">High complexity</option>
+          </select>
+
+          <select id="est_addons" aria-label="Addons">
+            <option value="none">No addons</option>
+            <option value="seo">SEO (basic)</option>
+            <option value="hosting">Hosting</option>
+            <option value="seo-hosting">SEO + Hosting</option>
+          </select>
+
+          <button class="btn-ghost" onclick="estimateNow()">Estimate</button>
+
+          <div id="est_output" class="est-result" aria-live="polite"></div>
+        </div>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">Estimates are indicative. For a final quote, request a free consultation.</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="section-head">
+        <h2 id="projects-heading">Selected Projects & Case Studies</h2>
+        <div class="muted">Click a project to read a case study and view similar projects.</div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project" tabindex="0" data-id="p-drives" onclick="openProject('p-drives')">
+          <img src="https://images.unsplash.com/photo-1520975911017-3f9c1f7462c1?q=80&w=1200&auto=format&fit=crop" alt="Drives logistic portal">
+          <h5>Drives — Logistics Portal</h5>
+          <div class="muted">Real-time tracking, route optimization, fleet dashboards</div>
+        </div>
+
+        <div class="project" tabindex="0" data-id="p-msi" onclick="openProject('p-msi')">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop" alt="MSI Interiors">
+          <h5>MSI Interiors — E-commerce & CMS</h5>
+          <div class="muted">Product catalog, CMS, AR preview & checkout optimization</div>
+        </div>
+
+        <div class="project" tabindex="0" data-id="p-health" onclick="openProject('p-health')">
+          <img src="https://images.unsplash.com/photo-1532619675605-84c5b2f4f2a1?q=80&w=1200&auto=format&fit=crop" alt="Healthcare analytics">
+          <h5>HealthCare Insight</h5>
+          <div class="muted">Patient analytics, ETL & predictive models</div>
+        </div>
+
+        <div class="project" tabindex="0" data-id="p-ecomm" onclick="openProject('p-ecomm')">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce scaleup">
+          <h5>E-commerce Scaleup</h5>
+          <div class="muted">Migration, performance & search optimization</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="section-head">
+        <h2 id="testimonials-heading">Client Testimonials</h2>
+        <div class="muted">Real feedback from happy clients</div>
+      </div>
+
+      <div class="test-list" id="testimonialsList">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <!-- PROMISES / POLICIES -->
+    <section id="promises" aria-labelledby="promises-heading">
+      <div class="section-head">
+        <h2 id="promises-heading">Our Promises & Policies</h2>
+        <div class="muted">We work transparently and document everything.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+        <div style="background:var(--panel);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent)">Documented Projects</h4>
+          <p class="muted">Each project has a scope document and acceptance criteria. Work begins after approval & sign-off.</p>
+        </div>
+
+        <div style="background:var(--panel);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent)">Fixed Pricing & Refunds</h4>
+          <p class="muted">Quotes are fixed per scope. Partial refunds are available for uncompleted deliverables; final deliverables become non-refundable after client sign-off post-review.</p>
+        </div>
+
+        <div style="background:var(--panel);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent)">SLAs & Support</h4>
+          <p class="muted">Choose monthly or yearly support plans with clear response time SLAs for priority customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="section-head">
+        <h2 id="contact-heading">Get a Free Consultation</h2>
+        <div class="muted">Fill the form or request a WhatsApp quote — free initial consultation.</div>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-card contact-form" id="leadForm" onsubmit="submitLead(event)">
+          <label class="muted">Full name</label>
+          <input id="lead_name" required placeholder="Your full name" />
+          <label class="muted">Email</label>
+          <input id="lead_email" type="email" required placeholder="you@example.com" />
+          <label class="muted">Phone</label>
+          <input id="lead_phone" required placeholder="+91 98765 43210" />
+          <label class="muted">Service of interest</label>
+          <select id="lead_service" required>
+            <option>Web Development</option>
+            <option>App Development</option>
+            <option>Maintenance & Support</option>
+            <option>Data & Analytics</option>
+            <option>Cloud Hosting & DevOps</option>
+            <option>SEO & Digital Marketing</option>
+          </select>
+          <label class="muted">Brief requirement</label>
+          <textarea id="lead_message" placeholder="Write few lines about your requirement, timeline and budget"></textarea>
+
+          <div style="display:flex;gap:10px;margin-top:10px;align-items:center">
+            <button class="btn-primary" type="submit">Send & Request WhatsApp</button>
+            <button type="button" class="btn-ghost" onclick="openWhatsAppFromForm()">Open WhatsApp</button>
+            <div id="lead_feedback" style="color:var(--muted);margin-left:8px;"></div>
+          </div>
+        </form>
+
+        <aside class="contact-card">
+          <h4 style="margin-top:0;color:var(--accent)">Contact Details</h4>
+          <p class="muted"><strong>WhatsApp (InfoTech):</strong> <a href="https://wa.me/917669486641" target="_blank">+91 76694 86641</a></p>
+          <p class="muted"><strong>Email:</strong> contact@crystallite.in</p>
+          <p class="muted"><strong>Address:</strong> Gurgaon — Brahmakumari Ashram (near Damdama Lake Rd)</p>
+
+          <div style="margin-top:12px">
+            <strong style="color:var(--accent)">Careers</strong>
+            <p class="muted">We hire across frontend, backend, data & devops — see <a href="careers.html">openings</a>.</p>
+          </div>
+
+          <div style="margin-top:14px">
+            <strong style="color:var(--accent)">Trust & Security</strong>
+            <p class="muted">We sign NDAs, use secure repos, and perform security checks before handover.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site" style="display:flex;flex-direction:column;gap:8px;align-items:center">
+      <div>© 2025 Crystallite InfoTech • All rights reserved</div>
+      <div class="muted">Trusted by clients in finance, healthcare, retail and e-commerce</div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="modalOverlay" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.7);z-index:200;align-items:center;justify-content:center">
+    <div id="modal" style="max-width:920px;width:94%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);box-shadow:var(--shadow);position:relative;">
+      <button onclick="closeModal()" aria-label="Close" style="position:absolute;right:10px;top:10px;background:transparent;border:0;color:var(--text);font-size:20px;cursor:pointer">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+<script>
+  // ---------- Quick data (projects, testimonials) ----------
+  const PROJECTS = {
+    'p-drives': {
+      title: 'Drives — Logistics Portal',
+      img: 'https://images.unsplash.com/photo-1520975911017-3f9c1f7462c1?q=80&w=1400&auto=format&fit=crop',
+      summary: 'SaaS logistics platform for real-time tracking, route optimization and driver mobile apps. Delivered with analytics and alerts.',
+      challenges: ['Scale to thousands of deliveries', 'Multi-carrier integrations', 'Real-time telemetry'],
+      outcomes: ['26% faster average delivery', 'Realtime dashboards', 'Driver mobile apps']
+    },
+    'p-msi': {
+      title: 'MSI Interiors — E-commerce & CMS',
+      img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1400&auto=format&fit=crop',
+      summary: 'Custom e-commerce with enhanced product previews and a content-managed CMS for fast updates.',
+      challenges: ['Large media assets', 'Fast delivery', 'Catalog management'],
+      outcomes: ['30% higher conversions', 'Faster catalog management']
+    },
+    'p-health': {
+      title: 'HealthCare Insight',
+      img: 'https://images.unsplash.com/photo-1532619675605-84c5b2f4f2a1?q=80&w=1400&auto=format&fit=crop',
+      summary: 'Data platform for clinical analytics, EHR integration and predictive models for readmission risk.',
+      challenges: ['Secure data handling', 'Normalization across EHRs'],
+      outcomes: ['Predictive readmission model', 'Actionable dashboards']
+    },
+    'p-ecomm': {
+      title: 'E-commerce Scaleup',
+      img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop',
+      summary: 'Platform migration and performance optimisation for peak-days traffic.',
+      challenges: ['Legacy platform migration', 'High concurrency'],
+      outcomes: ['2x throughput', 'Improved uptime and search']
+    }
+  };
+
+  const TESTIMONIALS = [
+    {name:'MSI Interiors', rating:5, text:'Crystallite InfoTech built a beautiful store and helped with conversions.'},
+    {name:'Drives Logistics', rating:5, text:'Excellent delivery and ongoing support. The team exceeded expectations.'},
+    {name:'HealthCare Systems', rating:4, text:'Very skilled at data pipelines and secure integrations.'}
+  ];
+
+  // render testimonials
+  (function renderTestimonials(){
+    const container = document.getElementById('testimonialsList');
+    if(!container) return;
+    container.innerHTML = '';
+    TESTIMONIALS.forEach(t=>{
+      const d = document.createElement('div');
+      d.className = 'testimonial';
+      d.innerHTML = `<strong>${escapeHtml(t.name)}</strong>
+        <div class="stars" aria-hidden="true">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
+        <p class="muted">${escapeHtml(t.text)}</p>`;
+      container.appendChild(d);
+    });
+  })();
+
+  // ---------- Utilities ----------
+  function escapeHtml(str=''){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function scrollToSection(id){
+    const el = document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  // ---------- Modal for projects & services ----------
+  function openProject(id){
+    const p = PROJECTS[id];
+    if(!p) return;
+    const html = `
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start">
+        <div>
+          <h2 style="margin-top:0;color:var(--accent)">${escapeHtml(p.title)}</h2>
+          <p style="color:var(--muted)">${escapeHtml(p.summary)}</p>
+          <h4 style="margin-bottom:6px">Challenges</h4>
+          <ul>${p.challenges.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')}</ul>
+          <h4 style="margin-bottom:6px;margin-top:10px">Outcomes</h4>
+          <ul>${p.outcomes.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')}</ul>
+
+          <div style="margin-top:12px">
+            <button class="btn-wa" onclick="openWhatsAppWithProject('${encodeURIComponent(p.title)}')">Discuss this project</button>
+            <button class="btn-ghost" onclick="closeModal();scrollToSection('contact')" style="margin-left:8px">Request Quote</button>
+          </div>
+        </div>
+
+        <aside style="background:rgba(255,255,255,0.02);padding:8px;border-radius:8px">
+          <img src="${p.img}" alt="${escapeHtml(p.title)}" style="width:100%;border-radius:8px;margin-bottom:8px" />
+          <div style="color:var(--muted);font-size:13px">Related: <button class="btn-view" onclick="closeModal();filterProjects('ecommerce')">E-commerce</button></div>
+        </aside>
+      </div>
+    `;
+    showModal(html);
+  }
+
+  function openServiceDetail(serviceName, price){
+    const html = `
+      <div style="display:grid;grid-template-columns:1fr 260px;gap:12px;align-items:start">
+        <div>
+          <h2 style="margin-top:0;color:var(--accent)">${escapeHtml(serviceName)}</h2>
+          <p style="color:var(--muted)">Detailed description for ${escapeHtml(serviceName)}. We deliver end-to-end solutions: planning, UI/UX, engineering, QA, deployment and operations.</p>
+          <ul>
+            <li>Feature scoping & estimation</li>
+            <li>Design & prototyping</li>
+            <li>Engineering & CI/CD</li>
+            <li>Testing & security</li>
+            <li>Deployment & monitoring</li>
+            <li>Maintenance & support</li>
+          </ul>
+          <div style="margin-top:12px">
+            <button class="btn-wa" onclick="openWhatsAppFromService('${escapeJs(serviceName)}',${price})">Get Precise Price</button>
+            <button class="btn-view" onclick="closeModal();scrollToSection('projects')" style="margin-left:8px">See projects</button>
+          </div>
+        </div>
+
+        <aside style="background:rgba(255,255,255,0.02);padding:12px;border-radius:8px">
+          <div style="font-weight:800;color:#eafcff">Starting price</div>
+          <div style="font-size:20px;font-weight:900;margin-top:8px">₹${Number(price).toLocaleString()}</div>
+          <div class="muted" style="margin-top:8px">Indicative — final quote after scoping & agreement.</div>
+        </aside>
+      </div>
+    `;
+    showModal(html);
+  }
+
+  function showModal(html){
+    const overlay = document.getElementById('modalOverlay');
+    document.getElementById('modalContent').innerHTML = html;
+    overlay.style.display = 'flex';
+    overlay.focus();
+  }
+  function closeModal(){
+    const overlay = document.getElementById('modalOverlay');
+    overlay.style.display='none';
+  }
+
+  // ---------- Estimator logic ----------
+  function estimateNow(){
+    const service = document.getElementById('est_service').value;
+    const complexity = document.getElementById('est_complexity').value;
+    const addons = document.getElementById('est_addons').value;
+    let base = 0;
+
+    switch(service){
+      case 'web': base=5000; break;
+      case 'web-dynamic': base=15000; break;
+      case 'app': base=25000; break;
+      case 'app-advanced': base=150000; break;
+      case 'analytics': base=10000; break;
+      default: base=10000;
+    }
+
+    let mult = complexity==='low' ? 1 : (complexity==='medium' ? 1.6 : 2.5);
+
+    let addonCost = 0;
+    if(addons==='seo') addonCost = 10000;
+    if(addons==='hosting') addonCost = 10000;
+    if(addons==='seo-hosting') addonCost = 18000;
+
+    const estimate = Math.round(base * mult + addonCost);
+    document.getElementById('est_output').innerText = 'Indicative estimate: ₹' + estimate.toLocaleString();
+
+    // store last estimate for Whatsapp quick send
+    window.__lastEstimate = {service, complexity, addons, estimate};
+  }
+
+  // ---------- WhatsApp actions ----------
+  const INFO_PHONE = '7669486641'; // InfoTech number (without +91 prefix)
+  function openWhatsAppFromService(serviceName, price){
+    // Customized message for a specific service
+    const lines = [
+      'Hello Crystallite InfoTech Team,',
+      '',
+      `I am interested in: *${serviceName}*`,
+      `Starting price shown: ₹${Number(price).toLocaleString()}`,
+      '',
+      'Please provide a detailed quotation and schedule for a free consultation.',
+      '',
+      'My details:',
+      'Name: ',
+      'Company: ',
+      'Phone: ',
+      'Email: ',
+      'Timeline: ',
+      'Budget (approx): ',
+      '',
+      'Thanks.'
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    const url = `https://wa.me/91${INFO_PHONE}?text=${text}`;
+    window.open(url,'_blank');
+  }
+
+  function openWhatsAppWithProject(projectTitle){
+    const lines = [
+      'Hello Crystallite InfoTech Team,',
+      '',
+      `I would like to discuss the project: *${decodeURIComponent(projectTitle)}*`,
+      '',
+      'Please share a slot for a quick free consultation.',
+      '',
+      
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/91${INFO_PHONE}?text=${text}`, '_blank');
+  }
+
+  function openWhatsAppFromForm(){
+    const name = document.getElementById('lead_name').value || '';
+    const email = document.getElementById('lead_email').value || '';
+    const phone = document.getElementById('lead_phone').value || '';
+    const service = document.getElementById('lead_service').value || '';
+    const message = document.getElementById('lead_message').value || '';
+
+    const lines = [
+      'Hello Crystallite InfoTech Team,',
+      '',
+      `I am interested in: *${service}*`,
+      '',
+      'Please provide a detailed quotation and a free consultation.',
+      '',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Requirement: ${message}`,
+      '',
+      'Thanks.'
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/91${INFO_PHONE}?text=${text}`, '_blank');
+  }
+
+  // ---------- Lead form (demo client-side) ----------
+  function submitLead(e){
+    e.preventDefault();
+    const name = document.getElementById('lead_name').value;
+    const email = document.getElementById('lead_email').value;
+    const phone = document.getElementById('lead_phone').value;
+    const service = document.getElementById('lead_service').value;
+    const message = document.getElementById('lead_message').value;
+
+    // Minimal validation
+    if(!name||!email||!phone){ document.getElementById('lead_feedback').innerText='Please fill required fields'; return; }
+
+    // In production: send to backend (API) or CRM. For now we open WhatsApp with prefilled message
+    openWhatsAppFromForm();
+
+    document.getElementById('lead_feedback').innerText='Opening WhatsApp...';
+    setTimeout(()=>{ document.getElementById('lead_feedback').innerText=''; }, 4000);
+    document.getElementById('leadForm').reset();
+  }
+
+  // ---------- Misc helpers ----------
+  function escapeJs(str){ return (str||'').replace(/'/g,"\\'").replace(/"/g,'\\"'); }
+
+  // keyboard accessibility to close modal (Escape)
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  // filter projects (demo)
+  function filterProjects(tag){
+    alert('Filter projects by: ' + tag + ' (demo)');
+  }
+
+  // auto-scroll to top when page loads a hash
+  if(location.hash) {
+    setTimeout(()=>{ const el = document.querySelector(location.hash); if(el) el.scrollIntoView({behavior:'smooth'}); }, 300);
+  }
+</script>
+</body>
+</html>
