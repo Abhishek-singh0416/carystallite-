@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic SEO - Optimized for "SmartBill Crystallite Infotech" -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SmartBill by Crystallite Infotech | AI GST Billing, Invoice Scanning App India</title>
+    <meta name="description" content="SmartBill by Crystallite Infotech - AI-powered GST billing app with invoice scanning, auto GST computation, WhatsApp sharing. Free 1st month, ₹199/month. Download APK now!">
+    <meta name="keywords" content="SmartBill Crystallite, Smart Bill Infotech, GST billing app, AI invoice scanning, Crystallite SmartBill, GST invoice generator India, Android billing APK">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SmartBill by Crystallite Infotech | AI GST Billing App">
+    <meta property="og:description" content="India's smartest GST billing with AI invoice scanning. Free 1st month trial, ₹199/month after. Download APK now!">
+    <meta property="og:url" content="https://crystallite.in/smartbill.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema for Software App -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SmartBill by Crystallite Infotech",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "199",
+            "priceCurrency": "INR"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Crystallite Infotech",
+            "url": "https://crystallite.in",
+            "telephone": "7669486641"
+        }
+    }
+    </script>
+
+    <!-- Fonts & Icons - Same as main site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #050816; --bg-section: #0b1220; --accent: #06b6d4;
+            --accent-soft: rgba(56, 189, 248, 0.15); --text-main: #f9fafb;
+            --text-muted: #9ca3af; --border-subtle: rgba(148, 163, 184, 0.3);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
+            --radius-lg: 18px; --radius-pill: 999px; --nav-height: 72px;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Poppins', system-ui, sans-serif;
+            background: radial-gradient(circle at top left, #1f2937 0%, #020617 40%, #000 100%);
+            color: var(--text-main); -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar - EXACT same as main site [file:56] */
+        header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.4));
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        }
+        .nav-inner { max-width: 1120px; margin: 0 auto; height: var(--nav-height);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem;
+        }
+        .brand { display: flex; align-items: center; gap: 0.6rem; cursor: pointer; transition: transform 0.3s ease; }
+        .brand:hover { transform: scale(1.05); }
+        .brand-mark { width: 34px; height: 34px; border-radius: 12px;
+            background: radial-gradient(circle at 0 0, #22d3ee, #0ea5e9 40%, #6366f1 100%);
+            display: flex; align-items: center; justify-content: center; color: #0f172a; font-weight: 700;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.65); font-size: 1.1rem;
+            animation: logo-pulse 3s ease-in-out infinite;
+        }
+        @keyframes logo-pulse { 0%, 100% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.65); }
+            50% { box-shadow: 0 0 40px rgba(56, 189, 248, 0.9); }
+        }
+        .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+        .brand-text span:first-child { font-weight: 600; letter-spacing: 0.05em; font-size: 1rem; text-transform: uppercase; }
+        .brand-text span:last-child { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.14em; }
+
+        nav { display: flex; align-items: center; gap: 1.75rem; font-size: 0.92rem; }
+        nav a { color: var(--text-muted); position: relative; transition: color 0.3s ease; }
+        nav a::after { content: ''; position: absolute; left: 0; bottom: -0.25rem; width: 0; height: 2px; border-radius: 8px;
+            background: linear-gradient(to right, #22d3ee, #6366f1); transition: width 0.22s ease-out;
+        }
+        nav a:hover { color: var(--text-main); }
+        nav a:hover::after { width: 20px; }
+
+        .nav-cta { padding: 0.5rem 1.2rem; border-radius: var(--radius-pill); border: 1px solid rgba(56, 189, 248, 0.4);
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.9));
+            color: var(--text-main); display: flex; align-items: center; gap: 0.45rem; font-size: 0.88rem; cursor: pointer;
+            box-shadow: 0 12px 30px rgba(8, 47, 73, 0.55); transition: all 0.2s ease;
+        }
+        .nav-cta:hover { transform: translateY(-1px); border-color: #22d3ee; box-shadow: 0 18px 40px rgba(8, 47, 73, 0.88); }
+
+        .nav-toggle { display: none; font-size: 1.4rem; cursor: pointer; transition: all 0.3s ease; color: var(--text-main); }
+        .nav-toggle:hover { transform: scale(1.1); color: #22d3ee; }
+        .nav-toggle.active { color: #22d3ee; transform: rotate(90deg); }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) { nav { display: none !important; } .nav-toggle { display: block; } .nav-inner { padding-inline: 1.1rem; } }
+        .mobile-menu { position: fixed; top: var(--nav-height); left: 0; right: 0; background: rgba(15, 23, 42, 0.97);
+            backdrop-filter: blur(18px); border-bottom: 1px solid rgba(148, 163, 184, 0.25); z-index: 30; max-height: 0; overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.show { max-height: 500px; }
+        .mobile-menu nav { display: flex !important; flex-direction: column; padding: 1rem 1.5rem 1.3rem; gap: 0.8rem; }
+        .mobile-menu nav a { font-size: 0.95rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(148, 163, 184, 0.2); }
+        .mobile-menu nav a:last-of-type { border-bottom: none; }
+        .mobile-menu .nav-cta { width: 100%; justify-content: center; margin-top: 0.5rem; }
+
+        /* Page Container */
+        .page { max-width: 1120px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+
+        /* Hero - SmartBill Specific */
+        .hero { min-height: calc(100vh - var(--nav-height) - 1.5rem); display: grid; grid-template-columns: 1.25fr 1.1fr;
+            gap: 2.7rem; align-items: center; padding-top: 1.7rem;
+        }
+        .hero-kicker { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.75rem;
+            border-radius: var(--radius-pill); background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.6);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-bottom: 1.1rem;
+            animation: fadeInUp 0.6s ease;
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero h1 { font-size: clamp(2.4rem, 4.2vw, 3.3rem); margin: 0; line-height: 1.09; letter-spacing: -0.04em;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        .hero h1 span.highlight { background: linear-gradient(to right, #22d3ee, #a855f7, #f97316); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-shift 3s ease infinite;
+            background-size: 200% 100%;
+        }
+        @keyframes gradient-shift { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } }
+
+        .hero-sub { margin-top: 0.9rem; font-size: 0.98rem; color: var(--text-muted); max-width: 33rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; margin: 1.3rem 0 1.7rem; }
+        .btn-primary { padding: 0.8rem 1.6rem; border-radius: var(--radius-pill); border: none;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9, #6366f1); color: #0b1120; font-weight: 600; font-size: 0.95rem;
+            cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 20px 50px rgba(37, 99, 235, 0.7);
+            transition: all 0.18s ease;
+        }
+        .btn-primary:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.07); box-shadow: 0 25px 60px rgba(37, 99, 235, 0.9); }
+        .btn-secondary { padding: 0.78rem 1.4rem; border-radius: var(--radius-pill); border: 1px solid rgba(148, 163, 184, 0.75);
+            background: rgba(15, 23, 42, 0.9); color: var(--text-main); font-size: 0.9rem; cursor: pointer; display: inline-flex;
+            align-items: center; gap: 0.45rem; transition: all 0.18s ease;
+        }
+        .btn-secondary:hover { background: rgba(15, 23, 42, 0.6); transform: translateY(-1px); border-color: #22d3ee; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .feature-card { padding: 2rem; border-radius: var(--radius-lg); background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.4); box-shadow: var(--shadow-soft); transition: all 0.3s ease;
+            text-align: center;
+        }
+        .feature-card:hover { transform: translateY(-8px); border-color: rgba(56, 189, 248, 0.7);
+            background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.95));
+        }
+        .feature-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-main); }
+
+        /* Pricing Section */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem; }
+        .price-card { padding: 2.5rem 2rem; border-radius: var(--radius-lg); background: rgba(15, 23, 42, 0.95);
+            border: 2px solid rgba(148, 163, 184, 0.4); text-align: center; transition: all 0.3s ease;
+        }
+        .price-card.popular { border-color: #22c55e; transform: scale(1.03); box-shadow: 0 25px 60px rgba(34, 197, 94, 0.3); }
+        .price-amount { font-size: 3.5rem; font-weight: 700; color: #22c55e; margin: 1rem 0; background: linear-gradient(135deg, #22c55e, #16a34a);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Download Section */
+        .download-section { text-align: center; padding: 4rem 0; background: rgba(15, 23, 42, 0.6); border-radius: var(--radius-lg); margin: 4rem 0;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+        .download-btn { display: inline-flex; align-items: center; gap: 1rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white; text-decoration: none; font-size: 1.2rem; font-weight: 600; border-radius: var(--radius-pill);
+            box-shadow: 0 20px 50px rgba(34, 197, 94, 0.4); transition: all 0.3s ease; margin-top: 1.5rem;
+        }
+        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 25px 60px rgba(34, 197, 94, 0.6); }
+
+        /* Sections */
+        section { padding: 4rem 0 0; }
+        section h2 { font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.03em; text-align: center; }
+        .section-intro { margin: 0 0 2rem; color: var(--text-muted); font-size: 1rem; text-align: center; max-width: 40rem; margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(148, 163, 184, 0.35); font-size: 0.85rem;
+            color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
+        }
+        footer a { color: #22d3ee; }
+
+        /* WhatsApp Float - Same as main site */
+        .whatsapp-float { position: fixed; width: 56px; height: 56px; bottom: 24px; right: 24px;
+            background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-radius: 50%; text-align: center;
+            font-size: 28px; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); z-index: 50; display: flex; align-items: center;
+            justify-content: center; transition: all 0.3s ease; cursor: pointer; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+        }
+        .whatsapp-float:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6); }
+
+        /* Responsive */
+        @media (max-width: 1024px) { .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; } }
+        @media (max-width: 768px) { .page { padding-inline: 1.1rem; } section { padding-top: 2.5rem; }
+            .features-grid { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACT same as main landing page [file:56] -->
+    <header>
+        <div class="nav-inner">
+            <div class="brand">
+                <div class="brand-mark">C</div>
+                <div class="brand-text">
+                    <span>Crystallite</span>
+                    <span>Infotech • Fintech studio</span>
+                </div>
+            </div>
+            <nav aria-label="Primary">
+                <a href="https://crystallite.in">Home</a>
+                <a href="https://crystallite.in/service.html">Services</a>
+                <a href="https://crystallite.in/infotech.html">InfoTech</a>
+                <a href="https://crystallite.in/fintech.html">FinTech</a>
+                <a href="https://crystallite.in/smartbill.html">SmartBill</a>
+                <a href="https://crystallite.in/Contact.html">Contact</a>
+            </nav>
+            <button class="nav-cta" onclick="window.location.href='https://crystallite.in/consultation.html'">
+                <i class="fa-regular fa-calendar"></i> Free Consultation
+            </button>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <nav>
+                <a href="https://crystallite.in" onclick="closeMenu()">Home</a>
+                <a href="https://crystallite.in/service.html" onclick="closeMenu()">Services</a>
+                <a href="https://crystallite.in/infotech.html" onclick="closeMenu()">InfoTech</a>
+                <a href="https://crystallite.in/fintech.html" onclick="closeMenu()">FinTech</a>
+                <a href="https://crystallite.in/smartbill.html" onclick="closeMenu()">SmartBill</a>
+                <a href="https://crystallite.in/Contact.html" onclick="closeMenu()">Contact</a>
+                <button class="nav-cta" style="margin-top: 0.4rem" onclick="closeMenu(); window.location.href='https://crystallite.in/consultation.html'">
+                    <i class="fa-regular fa-calendar"></i> Free Consultation
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div>
+                <div class="hero-kicker">
+                    <span><span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 999px; background: radial-gradient(circle at 0 0, #22c55e, #16a34a 50%, #0f766e 100%); box-shadow: 0 0 18px rgba(52, 211, 153, 0.7); color: #022c22; font-size: 0.8rem; animation: pulse-green 2s ease-in-out infinite;">✓</span> Crystallite Infotech</span>
+                    <span>AI-Powered GST Billing</span>
+                </div>
+                <h1>SmartBill<span class="highlight"> by Crystallite Infotech</span></h1>
+                <p class="hero-sub">India's smartest GST billing app with AI invoice scanning. Scan→Auto-fill→Share via WhatsApp. Free 1st month, just <strong>₹199/month</strong> after. Customer care & free consultation included.[memory:9]</p>
+                <div class="hero-cta-row">
+                    <a href="#download" class="btn-primary">
+                        <i class="fa-solid fa-download"></i> Download APK Free
+                    </a>
+                    <a href="#pricing" class="btn-secondary">
+                        <i class="fa-solid fa-calendar"></i> Start Free Trial
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <span>✅ 100% GST Compliant • Works Offline • Android 8.0+</span>
+                </div>
+            </div>
+            <!-- Hero Visual - Same style as main site -->
+            <aside class="hero-visual" aria-hidden="true">
+                <div class="hero-panel">
+                    <div class="hero-panel-header">
+                        <div class="hero-panel-dots">
+                            <div class="hero-panel-dot"></div>
+                            <div class="hero-panel-dot"></div>
+                            <div class="hero-panel-dot"></div>
+                        </div>
+                        <div class="hero-panel-title">SmartBill Dashboard</div>
+                    </div>
+                    <div class="hero-chart">
+                        <div class="line-chart">
+                            <svg viewBox="0 0 120 60" preserveAspectRatio="none">
+                                <polyline fill="none" stroke="#4CAF50" stroke-width="2" points="0,45 20,30 40,38 60,20 80,28 100,12 120,18"/>
+                            </svg>
+                            <span class="chart-title">Today's Invoices</span>
+                        </div>
+                        <div class="hero-bars">
+                            <div class="hero-bar">
+                                <div class="hero-bar-fill" style="height: 85%"></div>
+                                <span class="hero-bar-label">Sales</span>
+                            </div>
+                            <div class="hero-bar">
+                                <div class="hero-bar-fill" style="height: 70%"></div>
+                                <span class="hero-bar-label">GST</span>
+                            </div>
+                            <div class="hero-bar">
+                                <div class="hero-bar-fill" style="height: 40%"></div>
+                                <span class="hero-bar-label">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Features -->
+        <section id="features">
+            <h2 class="section-title">Why SmartBill is #1 Choice</h2>
+            <p class="section-intro">Complete GST billing solution by Crystallite Infotech. AI-powered, affordable, and enterprise-grade.[file:56]</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-robot feature-icon" style="color: #22d3ee;"></i>
+                    <h3>AI Invoice Scanning</h3>
+                    <p>Scan any invoice - supplier details, items, amounts, GST auto-filled instantly. No typing needed.[memory:3]</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-calculator feature-icon" style="color: #22c55e;"></i>
+                    <h3>Auto GST Computation</h3>
+                    <p>Monthly/yearly GST returns, HSN/SAC codes, IGST/CGST/SGST auto-calculation. 100% accurate.[web:21]</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-brands fa-whatsapp feature-icon" style="color: #25d366;"></i>
+                    <h3>WhatsApp Sharing</h3>
+                    <p>Share professional PDF invoices directly via WhatsApp/SMS with your logo & GSTIN.[memory:8]</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-users feature-icon" style="color: #a855f7;"></i>
+                    <h3>CRM + Inventory</h3>
+                    <p>Unlimited customers, suppliers, products. Purchase history, reports, AI chatbot support.[memory:1]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing">
+            <h2 class="section-title">Super Affordable Pricing</h2>
+            <p class="section-intro">Free 1st month trial. ₹199/month includes customer care support & free consultations with Crystallite Infotech.</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Free Trial</h3>
+                    <div class="price-amount">₹0 <span style="font-size: 0.4em;">1st Month</span></div>
+                    <ul style="text-align: left; margin: 1.5rem 0;">
+                        <li>✅ Full AI Invoice Scanning</li>
+                        <li>✅ Unlimited Invoices</li>
+                        <li>✅ WhatsApp Sharing</li>
+                        <li>✅ GST Computation</li>
+                    </ul>
+                    <a href="#download" class="btn-primary" style="width: 100%;">Start Free Trial</a>
+                </div>
+                <div class="price-card popular">
+                    <h3>Smart Plan</h3>
+                    <div class="price-amount">₹199<span style="font-size: 0.4em;">/month</span></div>
+                    <ul style="text-align: left; margin: 1.5rem 0;">
+                        <li>✅ Everything in Free +</li>
+                        <li>✅ Priority Support</li>
+                        <li>✅ Unlimited Storage</li>
+                        <li>✅ Custom Automation</li>
+                        <li>✅ Free Consultation</li>
+                    </ul>
+                    <a href="#download" class="btn-primary" style="width: 100%; background: linear-gradient(135deg, #22c55e, #16a34a);">Get SmartBill Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download APK -->
+        <section id="download" class="download-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Download SmartBill APK</h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 2rem;">
+                Direct Android download. No Google Play needed. 15MB • Works offline • By Crystallite Infotech
+            </p>
+            <a href="SmartBill_Crystallite.apk" download class="download-btn">
+                <i class="fa-solid fa-android" style="font-size: 1.5rem;"></i>
+                Download SmartBill APK (15MB)
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-muted);">Android 8.0+ • 100% Safe • GST Compliant</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1120px; margin: 0 auto; padding: 0 1.5rem;">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <span id="year">2025</span> Crystallite. All rights reserved. |
+                    <a href="https://crystallite.in">Home</a> |
+                    <a href="https://crystallite.in/service.html">Services</a> |
+                    <a href="https://crystallite.in/smartbill.html">SmartBill</a> |
+                    <a href="https://crystallite.in/Contact.html">Contact</a>
+                </div>
+                <div class="footer-right">
+                    <a href="#top">Back to top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/917669486641?text=Hi Crystallite! I want SmartBill demo & pricing details 📱" class="whatsapp-float" id="whatsappFloat" aria-label="Chat on WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile nav - EXACT same as main site [file:56]
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        function closeMenu() {
+            mobileMenu.classList.remove('show');
+            navToggle.classList.remove('active');
+        }
+        navToggle.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            mobileMenu.classList.toggle('show');
+            navToggle.classList.toggle('active');
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
+        });
+
+        // WhatsApp - Updated for SmartBill
+        const whatsappNumber = '917669486641';
+        function openWhatsApp(customMessage) {
+            const message = customMessage || 'Hi Crystallite team, I want SmartBill demo details.';
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, '_blank');
+        }
+        document.getElementById('whatsappFloat').addEventListener('click', (e) => {
+            e.preventDefault(); openWhatsApp();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (!this.href.includes('whatsappFloat')) {
+                    e.preventDefault(); closeMenu();
+                    setTimeout(() => {
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            });
+        });
+
+        // Year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
