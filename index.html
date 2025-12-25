@@ -467,9 +467,6 @@
     }
     
   
-
-    
-
     .hero-panel {
       position: relative;
       padding: 1.4rem;
@@ -486,7 +483,6 @@
       transform: translateY(-4px);
       box-shadow: 0 24px 55px rgba(15, 23, 42, 0.85), 0 0 40px rgba(56, 189, 248, 0.3);
     }
-
     .hero-panel-header {
       display: flex;
       justify-content: space-between;
@@ -749,7 +745,6 @@
       margin-bottom: 0.5rem;
       color: var(--text-main);
     }
-
     .domain-text {
       font-size: 0.9rem;
       color: var(--text-muted);
@@ -994,7 +989,6 @@
     color: #4ade80;
     animation: pulse-glow-green 3s ease-in-out infinite;
     }
-
     @keyframes pulse-glow-green {
       0%, 100% {
         box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
@@ -1016,7 +1010,6 @@
         grid-template-columns: 1fr;
     }
     }
-
 
     /* Contact */
     .contact-grid {
@@ -1306,23 +1299,21 @@
   </style>
 
   <!-- Optional: basic JSON-LD Organization schema for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Crystallite Infotech",
-  "url": "https://crystallite.in",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://crystallite.in/favicon-512x512.png"
-  },
-  "description": "Crystallite provides full-stack web development, app development, analytics and cloud solutions.",
-  "sameAs": [
-    "https://www.instagram.com/crystallite_infotech/"
-  ]
-}
-</script>
-
+  <!-- UPDATED ONLY THIS PART: valid JSON-LD so Google can detect logo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Crystallite",
+    "url": "https://crystallite.in/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crystallite.in/favicon-512x512.png"
+    },
+    "sameAs": [],
+    "description": "Crystallite provides full-stack web development, app development, analytics and cloud solutions."
+  }
+  </script>
 </head>
 <body>
 
@@ -1617,9 +1608,7 @@
   </div>
 </section>
 
-
-
-  <!-- Services -->
+<!-- Services -->
 <section id="services">
   <h2>Choose Your Service Domain</h2>
   <p class="section-intro">
@@ -1640,7 +1629,6 @@
     </a>
   </div>
 </section>
-
 
 <!-- Process -->
 <section id="process">
@@ -1713,8 +1701,6 @@
     </button>
   </section>
 
-  
-
   <footer>
   <div class="footer-container">
 
@@ -1729,11 +1715,6 @@
       <a href="contact.html">Contact</a><br>
       <a href="about.html">About</a><br>
     </div>
-
-    <!-- Center Navigation -->
-    
-      
-    
 
     <!-- Right Section -->
     <div class="footer-right">
