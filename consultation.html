@@ -1,518 +1,1037 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consultation and Estimator — Crystallite InfoTech</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-  <style>
-    :root {
-      --bg: #071021;
-      --panel: #0d1826;
-      --accent: #22d3ee;
-      --text: #eaf6ff;
-      --muted: #8ca7bb;
-    }
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: Poppins, sans-serif;
-      background: linear-gradient(180deg, var(--bg), #03070f);
-      color: var(--text);
-    }
-    /* Header */
-    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(6,10,18,0.6), rgba(6,10,18,0.3));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:80}
-    .site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6b8cff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021016;font-size:18px}
-    .brand-title{font-weight:700}
-    nav.primary{display:flex;gap:12px;align-items:center}
-    nav.primary a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav.primary a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
-    .hamburger{display:none;border:0;background:transparent;color:var(--text);font-size:20px;cursor:pointer;transition:all 0.3s ease;padding:8px 12px;border-radius:8px}
-    .hamburger:hover{color:var(--accent);background:rgba(255,255,255,0.05)}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystallite InfoTech | Requirement Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef3fb;
+  --bg-accent:#e4edff;
+  --surface:rgba(255,255,255,0.92);
+  --surface-strong:#ffffff;
+  --surface-soft:#f8fbff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#dbe5f3;
+  --primary:#2563eb;
+  --primary-2:#1d4ed8;
+  --primary-soft:#dbeafe;
+  --success:#15803d;
+  --success-soft:#dcfce7;
+  --error:#b91c1c;
+  --error-soft:#fee2e2;
+  --shadow:0 20px 60px rgba(37,99,235,0.10);
+  --shadow-soft:0 10px 30px rgba(15,23,42,0.08);
+  --radius-xl:24px;
+  --radius-lg:18px;
+  --radius-md:14px;
+  --radius-sm:12px;
+  --transition:all .28s ease;
+}
 
-    .container {
-      max-width: 920px;
-      margin: auto;
-      background: rgba(255,255,255,0.03);
-      padding: 24px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    h1 { color: var(--accent); margin-top: 0; }
-    h2 { color: var(--accent); font-size: 20px; margin-bottom: 8px; }
-    label { font-size: 14px; color: var(--muted); display: block; margin-top: 12px; }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      margin-top: 6px;
-      color: var(--text);
-    }
-    textarea { height: 100px; }
-    button {
-      padding: 12px 18px;
-      border: 0;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 18px;
-    }
-    .primary { background: linear-gradient(90deg, var(--accent), #7dd3fc); color: #021018; }
-    .ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--text); }
-    #estimatePanel {
-      margin-top: 30px;
-      padding: 20px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 12px;
-      display: none;
-    }
-    .estLine { font-size: 14px; color: var(--muted); }
-    .estTotal { font-size: 26px; font-weight: 900; margin-top: 12px; }
-    #status { margin-top: 12px; font-size: 13px; color: var(--muted); }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Manrope',Arial,sans-serif;
+}
 
-    /* Mobile Menu */
-    #mobileMenu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    #mobileMenu.show {
-      max-height: 400px;
-    }
-    #mobileMenu .card {
-      padding: 10px 0;
-    }
-    #mobileMenu a {
-      display: block;
-      padding: 12px 18px;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.2s ease;
-    }
-    #mobileMenu a:hover {
-      background: rgba(255,255,255,0.05);
-      color: var(--accent);
-      padding-left: 24px;
-    }
-    #mobileMenu a:last-child {
-      border-bottom: none;
-    }
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 28%),
+    radial-gradient(circle at right bottom, rgba(59,130,246,.12), transparent 30%),
+    linear-gradient(180deg, #f6f9ff 0%, #eef4fb 100%);
+  padding:40px 15px;
+  color:var(--text);
+}
 
-    /* Responsive */
-    @media (max-width:1100px){ .split{grid-template-columns:1fr} }
-    @media (max-width:820px){
-      nav.primary{display:none}
-      .hamburger{display:block}
-    }
-    @media (max-width:600px){
-      .site{padding:12px}
-      .logo{width:36px;height:36px;font-size:16px}
-    }
+.container{
+  max-width:980px;
+  margin:auto;
+  background:var(--surface);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.7);
+  padding:34px;
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
 
-    /* small helper */
-    .muted{color:var(--muted)}
-    .tiny{font-size:12px;color:var(--muted)}
-    .kbd{background:rgba(255,255,255,0.02);padding:4px 8px;border-radius:6px;font-weight:700}
-    .hidden{display:none}
-  </style>
-  </style>
+.container::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,.45), rgba(255,255,255,0));
+  pointer-events:none;
+}
+
+.logo{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.brand-mark{
+  width:60px;
+  height:60px;
+  border-radius:18px;
+  background:linear-gradient(135deg, var(--primary), #60a5fa);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  box-shadow:0 12px 24px rgba(37,99,235,.28);
+  flex-shrink:0;
+}
+
+.brand-mark svg{width:30px;height:30px;}
+
+.logo h1{
+  font-size:clamp(28px, 4vw, 34px);
+  font-weight:800;
+  color:#111827;
+  letter-spacing:-0.03em;
+}
+
+.logo p{
+  color:var(--muted);
+  margin-top:6px;
+  font-size:15px;
+}
+
+.header-badge{
+  padding:10px 16px;
+  border-radius:999px;
+  background:var(--primary-soft);
+  color:var(--primary-2);
+  font-size:13px;
+  font-weight:700;
+  border:1px solid #bfdbfe;
+}
+
+.progress-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+  position:relative;
+  z-index:1;
+}
+
+.progress-meta span{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.progress-bar{
+  width:100%;
+  height:14px;
+  background:#e7eef8;
+  border-radius:999px;
+  overflow:hidden;
+  margin-bottom:28px;
+  position:relative;
+  z-index:1;
+  border:1px solid #d8e3f1;
+}
+
+.progress{
+  height:100%;
+  width:33%;
+  background:linear-gradient(90deg, var(--primary), #60a5fa);
+  border-radius:999px;
+  box-shadow:0 8px 20px rgba(37,99,235,.24);
+  transition:0.4s;
+}
+
+.error-box{
+  background:var(--error-soft);
+  color:var(--error);
+  padding:14px 16px;
+  border-radius:var(--radius-md);
+  margin-bottom:22px;
+  display:none;
+  border:1px solid #fecaca;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  z-index:1;
+}
+
+form{
+  position:relative;
+  z-index:1;
+}
+
+.step{
+  display:none;
+  animation:fadeUp .35s ease;
+}
+
+.step.active{
+  display:block;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.step-panel{
+  background:linear-gradient(180deg, var(--surface-strong), var(--surface-soft));
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:var(--shadow-soft);
+}
+
+.step-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+}
+
+.step-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:var(--primary-2);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.step-top h2{
+  margin-top:14px;
+  color:#111827;
+  font-size:clamp(24px, 4vw, 30px);
+  letter-spacing:-0.03em;
+}
+
+.step-top p{
+  color:var(--muted);
+  margin-top:8px;
+  max-width:600px;
+  line-height:1.6;
+}
+
+.step-icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  background:linear-gradient(135deg, #eff6ff, #dbeafe);
+  display:grid;
+  place-items:center;
+  color:var(--primary);
+  border:1px solid #bfdbfe;
+  flex-shrink:0;
+}
+
+.step-icon svg{width:24px;height:24px;}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group.full{
+  grid-column:1 / -1;
+}
+
+label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+  font-weight:700;
+  color:#1e293b;
+  font-size:14px;
+}
+
+label .required{
+  color:var(--error);
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  font-size:15px;
+  background:#fff;
+  color:var(--text);
+  outline:none;
+  transition:var(--transition);
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#93c5fd;
+  box-shadow:0 0 0 4px rgba(37,99,235,.12);
+  transform:translateY(-1px);
+}
+
+textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.help-text{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.5;
+}
+
+.service-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+.selection-hint{
+  padding:14px 16px;
+  border-radius:var(--radius-md);
+  background:#f8fafc;
+  border:1px dashed #cbd5e1;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.checkbox-group{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:14px;
+}
+
+.checkbox-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  border:1px solid #dbe5f3;
+  padding:15px 16px;
+  border-radius:16px;
+  background:linear-gradient(180deg, #ffffff, #f8fbff);
+  cursor:pointer;
+  transition:var(--transition);
+  min-height:72px;
+}
+
+.checkbox-item:hover{
+  border-color:#93c5fd;
+  box-shadow:0 12px 24px rgba(37,99,235,.10);
+  transform:translateY(-2px);
+}
+
+.checkbox-item input{
+  width:20px;
+  height:20px;
+  margin-top:2px;
+  accent-color:var(--primary);
+  flex-shrink:0;
+}
+
+.checkbox-content{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.checkbox-title{
+  font-size:15px;
+  font-weight:700;
+  color:#0f172a;
+}
+
+.checkbox-desc{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.service-summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+
+.service-summary span{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.info-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:var(--primary-2);
+  font-size:13px;
+  font-weight:700;
+}
+
+.buttons{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-top:30px;
+  position:relative;
+  z-index:1;
+}
+
+button{
+  border:none;
+  padding:14px 24px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:800;
+  transition:var(--transition);
+  min-width:140px;
+}
+
+button:hover{
+  transform:translateY(-1px);
+}
+
+button:active{
+  transform:translateY(0);
+}
+
+.prev-btn{
+  background:#eef2f7;
+  color:#334155;
+  border:1px solid #d8e0ea;
+}
+
+.prev-btn:hover{
+  background:#e2e8f0;
+}
+
+.next-btn,
+.submit-btn{
+  background:linear-gradient(135deg, var(--primary), var(--primary-2));
+  color:#fff;
+  box-shadow:0 14px 30px rgba(37,99,235,.24);
+}
+
+.next-btn:hover,
+.submit-btn:hover{
+  box-shadow:0 18px 34px rgba(37,99,235,.30);
+}
+
+.success{
+  display:none;
+  text-align:center;
+  padding:40px 24px;
+  position:relative;
+  z-index:1;
+}
+
+.success-card{
+  max-width:620px;
+  margin:0 auto;
+  background:linear-gradient(180deg, #ffffff, #f7fff9);
+  border:1px solid #d7f1df;
+  border-radius:28px;
+  padding:38px 28px;
+  box-shadow:0 20px 50px rgba(21,128,61,.10);
+}
+
+.success-icon{
+  width:82px;
+  height:82px;
+  margin:0 auto 20px;
+  border-radius:24px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color:var(--success);
+  box-shadow:0 16px 30px rgba(21,128,61,.14);
+}
+
+.success-icon svg{width:40px;height:40px;}
+
+.success h2{
+  color:var(--success);
+  margin-bottom:10px;
+  font-size:clamp(28px, 4vw, 34px);
+  letter-spacing:-0.03em;
+}
+
+.success p{
+  color:#475569;
+  font-size:16px;
+  line-height:1.7;
+  margin:0 auto;
+  max-width:480px;
+}
+
+.loading{
+  opacity:0.7;
+  pointer-events:none;
+}
+
+@media(max-width:768px){
+  body{
+    padding:24px 12px;
+  }
+
+  .container{
+    padding:20px;
+    border-radius:22px;
+  }
+
+  .logo{
+    margin-bottom:22px;
+  }
+
+  .brand{
+    align-items:flex-start;
+  }
+
+  .brand-mark{
+    width:52px;
+    height:52px;
+    border-radius:16px;
+  }
+
+  .step-panel{
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .grid-2{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .checkbox-group{
+    grid-template-columns:1fr;
+  }
+
+  .buttons{
+    flex-wrap:wrap;
+  }
+
+  button{
+    width:100%;
+  }
+
+  .prev-btn,
+  .next-btn,
+  .submit-btn{
+    min-width:unset;
+  }
+
+  .header-badge{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+  }
+}
+</style>
 </head>
 <body>
-    <header>
-    <div class="site site-header" role="banner">
-      <div class="brand" aria-label="Crystallite InfoTech">
-        <div class="logo">
-          <img src="logo.png" alt="Crystallite InfoTech Logo" style="width:46px; height:46px; border-radius:10px;">
-        </div>
-        <div>
-          <div class="brand-title">Crystallite InfoTech</div>
-          <div class="tiny muted">Gurgaon — Web, Apps, Cloud & Fintech</div>
-        </div>
+<div class="container">
+  <div class="logo">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 7h14"></path>
+          <path d="M7 12h10"></path>
+          <path d="M9 17h6"></path>
+        </svg>
       </div>
-
-      <nav class="primary" role="navigation" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <button class="hamburger" id="navToggle" aria-label="Open menu">☰</button>
-    </div>
-    <!-- Mobile nav -->
-    <div id="mobileMenu" class="site">
-      <div class="card">
-        <a href="index.html" onclick="closeMobileMenu()">Home</a>
-        <a href="service.html" onclick="closeMobileMenu()">Services</a>
-        <a href="infotech.html" onclick="closeMobileMenu()">Infotech</a>
-        <a href="fintech.html" onclick="closeMobileMenu()">FinTech</a>
-        <a href="about.html" onclick="closeMobileMenu()">About</a>
-        <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+      <div>
+        <h1>Crystallite InfoTech</h1>
+        <p>Client Requirement Form</p>
       </div>
     </div>
-  </header>
-  <div class="container">
-    <h1>Consultation & Price Estimator</h1>
-    <p style="color: var(--muted); margin-bottom: 24px;">
-      Step 1: Fill your details → Step 2: Select service & complexity → Step 3: Get your estimate → Contact us via WhatsApp or Email.
-    </p>
-
-    <!-- --- Step 1: Client Details --- -->
-    <h2>Step 1: Your Details</h2>
-    <label for="name">Full Name</label>
-    <input id="name" placeholder="Your full name" />
-
-    <label for="phone">Phone (WhatsApp)</label>
-    <input id="phone" placeholder="+91 XXXXX XXXXX" />
-
-    <label for="email">Email</label>
-    <input id="email" placeholder="you@example.com" />
-
-    <!-- --- Step 2: Service Details --- -->
-    <h2 style="margin-top: 28px;">Step 2: Service / Project Details</h2>
-
-    <label for="category">Service Category</label>
-    <select id="category">
-      <option value="tech">Tech Services</option>
-      <option value="fintech">Fintech / Financial Services</option>
-    </select>
-
-    <label for="subservice">Sub-Service</label>
-    <select id="subservice">
-      <!-- will be populated by JS based on category -->
-    </select>
-
-    <label for="complexity">Complexity</label>
-    <select id="complexity">
-      <option value="low">Low</option>
-      <option value="medium">Medium </option>
-      <option value="high">High </option>
-    </select>
-
-    <label for="addons">Add-ons (optional)</label>
-    <select id="addons">
-      <option value="none">None</option>
-      <option value="urgent">Urgent Delivery </option>
-      <option value="support">Support / Maintenance </option>
-      <option value="extra_module">Extra Feature Module </option>
-    </select>
-
-    <label for="details">Brief / Requirements</label>
-    <textarea id="details" placeholder="Write a few lines about your needs, timeline, users, etc."></textarea>
-
-    <button class="primary" id="generateBtn">Show Estimated Price</button>
-    <div id="status"></div>
-
-    <!-- --- Step 3: Estimate & Contact --- -->
-    <div id="estimatePanel">
-      <h2>Estimated Cost</h2>
-      <div class="estLine">Base Price: <span id="basePrice">₹0</span></div>
-      <div class="estLine">Complexity Multiplier: <span id="multVal">1.0</span></div>
-      <div class="estLine">Add-ons Cost: <span id="addonCost">₹0</span></div>
-      <div class="estTotal">Total Estimate: <span id="estimateTotal">₹0</span></div>
-
-      <h2 style="margin-top: 24px;">Step 4: Contact Us</h2>
-      <button class="ghost" id="whatsappBtn">WhatsApp Us</button>
-      <button class="ghost" id="emailBtn">Email Us</button>
-    </div>
+    <div class="header-badge">Professional Multi-Step Requirement Intake</div>
   </div>
 
-<script>
-  /**************** MOBILE MENU ****************/
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  <div class="progress-meta">
+    <span>Project Discovery Flow</span>
+    <span id="stepIndicator">Step 1 of 3</span>
+  </div>
 
-  function closeMobileMenu() {
-    mobileMenu.classList.remove('show');
-    navToggle.style.color = 'var(--text)';
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <div class="error-box" id="errorBox"></div>
+
+  <form id="requirementForm">
+    <div class="step active">
+      <div class="step-panel">
+        <div class="step-top">
+          <div>
+            <div class="step-kicker">Step 01</div>
+            <h2>Client Information</h2>
+            <p>Share your core contact details so our team can understand who is submitting the requirement and connect with you quickly.</p>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21a8 8 0 0 0-16 0"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" autocomplete="name" placeholder="Enter your complete name">
+            <div class="help-text">Enter your complete name.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="companyName">Company / Business Name</label>
+            <input type="text" id="companyName" autocomplete="organization" placeholder="Enter your company or business name">
+          </div>
+
+          <div class="form-group">
+            <label for="designation">Role / Designation</label>
+            <input type="text" id="designation" autocomplete="organization-title" placeholder="Enter your role or designation">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number / WhatsApp <span class="required">*</span></label>
+            <input type="tel" id="phone" autocomplete="tel" placeholder="Enter phone or WhatsApp number">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-panel">
+        <div class="step-top">
+          <div>
+            <div class="step-kicker">Step 02</div>
+            <h2>Service Requirements</h2>
+            <p>Select the service category first, then choose one or more relevant services. The available service options will update automatically based on your selected category.</p>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 18h10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="service-layout">
+          <div class="form-group">
+            <label for="serviceType">Service Category <span class="required">*</span></label>
+            <select id="serviceType">
+              <option value="">Select Service Category</option>
+              <option value="Technical & IT Services">Technical & IT Services</option>
+              <option value="Finance & Accounting Services">Finance & Accounting Services</option>
+              <option value="Business & Marketing Services">Business & Marketing Services</option>
+              <option value="Consulting & Support Services">Consulting & Support Services</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Services Required <span class="required">*</span></label>
+            <div class="selection-hint" id="serviceHint">Choose a service category to load available services.</div>
+            <div class="service-summary">
+              <span id="serviceCount">0 services selected</span>
+              <div class="info-chip" id="categoryChip">No category selected</div>
+            </div>
+            <div class="checkbox-group" id="servicesContainer"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Estimated Budget</label>
+            <select id="budget">
+              <option value="">Select Budget</option>
+              <option>Under ₹10K</option>
+              <option>₹10K - ₹50K</option>
+              <option>₹50K - ₹2L</option>
+              <option>₹2L - ₹10L</option>
+              <option>₹10L+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-panel">
+        <div class="step-top">
+          <div>
+            <div class="step-kicker">Step 03</div>
+            <h2>Project Details</h2>
+            <p>Describe your requirement clearly so our team can understand the scope, goals, features, timeline, and any current business or technical challenges.</p>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="M8 13h8"></path>
+              <path d="M8 17h6"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form-group full">
+          <label for="projectDetails">Project Details <span class="required">*</span></label>
+          <textarea id="projectDetails" placeholder="Describe your project requirements, features, timeline, goals, or challenges..."></textarea>
+          <div class="help-text">Mention your business goals, expected features, timeline, or current challenges.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="prev-btn" id="prevBtn">Previous</button>
+      <button type="button" class="next-btn" id="nextBtn">Next</button>
+      <button type="submit" class="submit-btn" id="submitBtn">Submit Requirement</button>
+    </div>
+  </form>
+
+  <div class="success" id="successMessage">
+    <div class="success-card">
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5"></path>
+        </svg>
+      </div>
+      <h2>Thank You!</h2>
+      <p>Your requirement has been submitted successfully.</p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDo00QcvzrQh-5xptAc66aiWgN_2lePYsY",
+  authDomain: "crystallite-c25b3.firebaseapp.com",
+  projectId: "crystallite-c25b3",
+  storageBucket: "crystallite-c25b3.firebasestorage.app",
+  messagingSenderId: "1034180616260",
+  appId: "1:1034180616260:web:4db982574bb05125045c11"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+console.log("Firebase Connected");
+
+const serviceData = {
+  "Technical & IT Services":[
+    "Website Development",
+    "Web Application Development",
+    "Mobile App Development",
+    "CRM Development",
+    "ERP Software",
+    "Cloud Hosting",
+    "API Integration",
+    "Dashboard & Analytics",
+    "AI Automation",
+    "UI/UX Design",
+    "Cyber Security",
+    "IT Support"
+  ],
+  "Finance & Accounting Services":[
+    "GST Filing",
+    "Income Tax Filing",
+    "Accounting & Bookkeeping",
+    "Payroll Management",
+    "Audit Support",
+    "Financial Reporting",
+    "Compliance Management",
+    "Business Registration",
+    "Tax Consultation"
+  ],
+  "Business & Marketing Services":[
+    "SEO Services",
+    "Digital Marketing",
+    "Social Media Marketing",
+    "Branding",
+    "Graphic Designing",
+    "Lead Generation",
+    "Advertisement Campaigns",
+    "Content Marketing",
+    "Business Strategy"
+  ],
+  "Consulting & Support Services":[
+    "Startup Consulting",
+    "Business Consulting",
+    "Technical Consultation",
+    "Process Automation",
+    "Documentation Support",
+    "Project Management",
+    "Vendor Support",
+    "Training & Guidance",
+    "Maintenance Support"
+  ]
+};
+
+const serviceDescriptions = {
+  "Website Development":"Corporate, business, and custom website solutions.",
+  "Web Application Development":"Interactive web platforms and portal systems.",
+  "Mobile App Development":"Android and iOS app development services.",
+  "CRM Development":"Customer relationship and workflow systems.",
+  "ERP Software":"Business process and resource planning solutions.",
+  "Cloud Hosting":"Secure cloud deployment and hosting setup.",
+  "API Integration":"Third-party and internal system integrations.",
+  "Dashboard & Analytics":"Business dashboards, reports, and insights.",
+  "AI Automation":"Smart automation for workflows and operations.",
+  "UI/UX Design":"Modern interface and user experience design.",
+  "Cyber Security":"Protection, audits, and security strengthening.",
+  "IT Support":"Technical assistance and ongoing IT support.",
+  "GST Filing":"GST filing, returns, and compliance help.",
+  "Income Tax Filing":"Personal and business income tax filing.",
+  "Accounting & Bookkeeping":"Day-to-day books and financial records.",
+  "Payroll Management":"Salary, attendance, and payroll processing.",
+  "Audit Support":"Audit preparation and supporting documentation.",
+  "Financial Reporting":"Clear reporting for financial performance.",
+  "Compliance Management":"Business compliance tracking and support.",
+  "Business Registration":"Firm, company, and registration services.",
+  "Tax Consultation":"Planning and expert tax guidance.",
+  "SEO Services":"Search visibility and organic growth support.",
+  "Digital Marketing":"Performance campaigns and digital outreach.",
+  "Social Media Marketing":"Brand growth across social channels.",
+  "Branding":"Identity building for strong market presence.",
+  "Graphic Designing":"Visual creatives for digital and print needs.",
+  "Lead Generation":"Qualified lead sourcing and funnel support.",
+  "Advertisement Campaigns":"Paid campaign planning and execution.",
+  "Content Marketing":"Content strategy for awareness and trust.",
+  "Business Strategy":"Growth, planning, and positioning support.",
+  "Startup Consulting":"Launch strategy and startup planning guidance.",
+  "Business Consulting":"General business improvement and planning.",
+  "Technical Consultation":"Expert guidance for technical decisions.",
+  "Process Automation":"Automating routine business processes.",
+  "Documentation Support":"Professional business and project documentation.",
+  "Project Management":"Planning, tracking, and delivery support.",
+  "Vendor Support":"Coordination and support for vendor operations.",
+  "Training & Guidance":"Hands-on training and advisory assistance.",
+  "Maintenance Support":"Ongoing support, fixes, and improvements."
+};
+
+const steps = document.querySelectorAll(".step");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const submitBtn = document.getElementById("submitBtn");
+const progress = document.getElementById("progress");
+const errorBox = document.getElementById("errorBox");
+const form = document.getElementById("requirementForm");
+const serviceType = document.getElementById("serviceType");
+const servicesContainer = document.getElementById("servicesContainer");
+const serviceHint = document.getElementById("serviceHint");
+const serviceCount = document.getElementById("serviceCount");
+const categoryChip = document.getElementById("categoryChip");
+const stepIndicator = document.getElementById("stepIndicator");
+let currentStep = 0;
+
+updateForm();
+updateServiceCounter();
+
+serviceType.addEventListener("change",()=>{
+  const selectedCategory = serviceType.value;
+  servicesContainer.innerHTML = "";
+
+  if(selectedCategory === ""){
+    serviceHint.style.display = "block";
+    serviceHint.innerHTML = "Choose a service category to load available services.";
+    categoryChip.innerHTML = "No category selected";
+    updateServiceCounter();
+    return;
   }
 
-  navToggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    mobileMenu.classList.toggle('show');
-    
-    // Toggle hamburger color
-    if (mobileMenu.classList.contains('show')) {
-      navToggle.style.color = 'var(--accent)';
-    } else {
-      navToggle.style.color = 'var(--text)';
-    }
+  const services = serviceData[selectedCategory];
+  categoryChip.innerHTML = selectedCategory;
+  serviceHint.style.display = "block";
+  serviceHint.innerHTML = "Select one or more services that best match your requirement.";
+
+  services.forEach((service)=>{
+    servicesContainer.innerHTML += `
+      <label class="checkbox-item">
+        <input type="checkbox" value="${service}">
+        <span class="checkbox-content">
+          <span class="checkbox-title">${service}</span>
+          <span class="checkbox-desc">${serviceDescriptions[service] || "Professional service support."}</span>
+        </span>
+      </label>
+    `;
   });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-      closeMobileMenu();
-    }
+  document.querySelectorAll('#servicesContainer input').forEach((checkbox)=>{
+    checkbox.addEventListener('change', updateServiceCounter);
   });
 
-  // Close menu on window resize (>820px)
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 820) {
-      closeMobileMenu();
-    }
-  });
+  updateServiceCounter();
+});
 
-  /**************** CONFIGURATION ****************/
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzU9EKBRPA4I3zqt26PP5LecRQZB3BYQSXauthv5QAwV2mz1fkGOWXEGBI7btIQIJeCZQ/exec"; // <— replace with your Google Apps Script URL
-  const WHATSAPP_NUMBER = "917669486641";
-  const EMAIL_ADDRESS = "abhishek.singh.ds21@gmail.com";
+function updateServiceCounter(){
+  const selectedServices = document.querySelectorAll('#servicesContainer input:checked');
+  serviceCount.innerHTML = `${selectedServices.length} service${selectedServices.length === 1 ? '' : 's'} selected`;
+}
 
-  // Pricing base values (INR)
-  const BASE_PRICES = {
-    // Tech services
-    "Frontend Development": 150000,
-    "Backend Development": 200000,
-    "Full Stack Development": 250000,
-    "Progressive Web Apps (PWA)": 180000,
-    "Content Management Systems": 120000,
-    "E-commerce Web Development": 200000,
-    "API Design & Integration": 100000,
-    "Website Maintenance & Support": 12000,
-    "UX/UI Design & Prototyping": 80000,
-    "Native Android Development": 250000,
-    "Native iOS Development": 250000,
-    "Cross-platform Development": 300000,
-    "App UI/UX Design": 90000,
-    "App Testing & QA": 50000,
-    "App Deployment & Store Optimization": 30000,
-    "Cloud Architecture & Migration": 300000,
-    "DevOps & CI/CD Pipelines": 200000,
-    "Managed Hosting & Server Management": 150000,
-    "Cloud Security & Compliance": 250000,
-    "Containerization & Orchestration": 220000,
-    "Data Warehousing & ETL": 250000,
-    "Business Intelligence Dashboards": 150000,
-    "Big Data Processing": 350000,
-    "Data Science & Predictive Analytics": 300000,
-    "AI/ML Model Development": 400000,
-    "NLP & Computer Vision Applications": 450000,
-    "MVP Development": 250000,
-    "SaaS Application Development": 500000,
-    "Enterprise Software Solutions": 800000,
-    "Custom Software Development": 400000,
-    "Software Testing & QA Automation": 150000,
-    "Search Engine Optimization (SEO)": 15000,
-    "Pay-per-click (PPC) Campaigns": 20000,
-    "Social Media Marketing": 18000,
-    "Content Marketing & Blogging": 12000,
-    "Email Marketing Automation": 10000,
-    "Performance Marketing & Growth Hacking": 22000,
-    "Security Assessments & Penetration Testing": 150000,
-    "Code Audits & Vulnerability Assessments": 120000,
-    "Security Monitoring & Incident Response": 200000,
-    "Compliance Audits (ISO, GDPR, HIPAA)": 300000,
+function showError(message){
+  errorBox.style.display = "block";
+  errorBox.innerHTML = message;
+}
 
-    // Fintech services
-    "Bookkeeping Services": 8000,
-    "General Ledger Management": 10000,
-    "Payroll & Expense Tracking": 12000,
-    "GST Registration & Filing": 5000,
-    "Income Tax Return Filing": 4000,
-    "TDS Calculation & Filing": 6000,
-    "Statutory Audits": 150000,
-    "Internal Audits": 90000,
-    "GST Audits": 60000,
-    "ROC Filings (Annual Returns)": 20000,
-    "Company Incorporation & Registrations": 30000,
-    "Labour Law Compliance": 25000,
-    "Cashflow Forecasting & Budgeting": 50000,
-    "Business Valuation": 100000,
-    "Fundraising & Capital Advisory": 150000,
-    "Risk Management & Insurance": 120000,
-    "Payroll Processing & Salary Structuring": 12000,
-    "Leave & Attendance Management": 15000,
-    "Compliance Automation Tools": 100000,
-    "Invoice & Payment Processing": 100000,
-    "e-Invoice & e-Way Bill Integration": 80000,
-    "AI-driven Financial Analytics & Reporting": 250000
-  };
+function hideError(){
+  errorBox.style.display = "none";
+}
 
-  const MULTIPLIER = { low: 1.0, medium: 1.6, high: 2.5 };
-  const ADDON_FIXED = { none: 0, urgent: 0.2, support: 30000, extra_module: 50000 };
+nextBtn.addEventListener("click",()=>{
+  hideError();
 
-  /**************** UI ELEMENTS ****************/
-  const $ = id => document.getElementById(id);
+  if(currentStep === 0){
+    const name = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
 
-  function populateSubservices() {
-    const category = $("category").value;
-    const sub = $("subservice");
-    sub.innerHTML = "";
-
-    const techList = [
-      "Frontend Development","Backend Development","Full Stack Development",
-      "Progressive Web Apps (PWA)","Content Management Systems",
-      "E-commerce Web Development","API Design & Integration",
-      "Website Maintenance & Support","UX/UI Design & Prototyping",
-      "Native Android Development","Native iOS Development","Cross-platform Development",
-      "App UI/UX Design","App Testing & QA","App Deployment & Store Optimization",
-      "Cloud Architecture & Migration","DevOps & CI/CD Pipelines","Managed Hosting & Server Management",
-      "Cloud Security & Compliance","Containerization & Orchestration",
-      "Data Warehousing & ETL","Business Intelligence Dashboards","Big Data Processing",
-      "Data Science & Predictive Analytics","AI/ML Model Development","NLP & Computer Vision Applications",
-      "MVP Development","SaaS Application Development","Enterprise Software Solutions",
-      "Custom Software Development","Software Testing & QA Automation",
-      "Search Engine Optimization (SEO)","Pay-per-click (PPC) Campaigns","Social Media Marketing",
-      "Content Marketing & Blogging","Email Marketing Automation","Performance Marketing & Growth Hacking",
-      "Security Assessments & Penetration Testing","Code Audits & Vulnerability Assessments",
-      "Security Monitoring & Incident Response","Compliance Audits (ISO, GDPR, HIPAA)"
-    ];
-    const fintechList = [
-      "Bookkeeping Services","General Ledger Management","Payroll & Expense Tracking",
-      "GST Registration & Filing","Income Tax Return Filing","TDS Calculation & Filing",
-      "Statutory Audits","Internal Audits","GST Audits","ROC Filings (Annual Returns)",
-      "Company Incorporation & Registrations","Labour Law Compliance","Cashflow Forecasting & Budgeting",
-      "Business Valuation","Fundraising & Capital Advisory","Risk Management & Insurance",
-      "Payroll Processing & Salary Structuring","Leave & Attendance Management",
-      "Compliance Automation Tools","Invoice & Payment Processing","e-Invoice & e-Way Bill Integration",
-      "AI-driven Financial Analytics & Reporting"
-    ];
-
-    const list = category === "tech" ? techList : fintechList;
-    list.forEach(s => {
-      const o = document.createElement("option");
-      o.value = s;
-      o.text = s;
-      sub.appendChild(o);
-    });
-  }
-
-  $("category").addEventListener("change", populateSubservices);
-  populateSubservices();
-
-  /**************** ESTIMATION LOGIC ****************/
-  function computeEstimate() {
-    const sub = $("subservice").value;
-    const complexity = $("complexity").value;
-    const addon = $("addons").value;
-
-    const base = BASE_PRICES[sub] || 0;
-    const mult = MULTIPLIER[complexity] || 1;
-    const addonVal = ADDON_FIXED[addon] || 0;
-
-    // If addon is "urgent", treat as percentage
-    let addonCost = addonVal;
-    if (addon === "urgent") {
-      addonCost = base * addonVal; // percentage
-    }
-
-    const total = Math.round(base * mult + addonCost);
-
-    return { base, mult, addonCost, total };
-  }
-
-  function formatINR(x) {
-    return "₹" + Number(x).toLocaleString("en-IN");
-  }
-
-  /**************** BUILD LEAD PAYLOAD ****************/
-  function buildPayload() {
-    const est = computeEstimate();
-    return {
-      name: $("name").value.trim(),
-      phone: $("phone").value.trim(),
-      email: $("email").value.trim(),
-      category: $("category").value,
-      subservice: $("subservice").value,
-      complexity: $("complexity").value,
-      addons: $("addons").value,
-      details: $("details").value.trim(),
-      estimate: est.total,
-      estimateText: formatINR(est.total),
-      timestamp: new Date().toISOString(),
-      page: location.href
-    };
-  }
-
-  /**************** SAVE TO SHEET ****************/
-  async function saveToSheet(payload) {
-    $("status").innerText = "Saving your details...";
-    try {
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      const json = await res.json();
-      if (json.success) {
-        $("status").innerText = "Details saved.";
-      } else {
-        $("status").innerText = "Saved, but unexpected response.";
-      }
-    } catch (err) {
-      console.error(err);
-      $("status").innerText = "Error saving: " + err.message;
-    }
-  }
-
-  /**************** EVENT HANDLERS ****************/
-  $("generateBtn").addEventListener("click", async () => {
-    const name = $("name").value.trim();
-    const phone = $("phone").value.trim();
-    const email = $("email").value.trim();
-    if (!name || !phone) {
-      $("status").innerText = "Please fill your name and phone.";
+    if(name === ""){
+      showError("Please enter full name.");
       return;
     }
 
-    const payload = buildPayload();
-    await saveToSheet(payload);
+    if(phone === ""){
+      showError("Please enter phone number.");
+      return;
+    }
+  }
 
-    const est = computeEstimate();
-    $("basePrice").innerText = formatINR(est.base);
-    $("multVal").innerText = est.mult.toFixed(2);
-    $("addonCost").innerText = formatINR(est.addonCost);
-    $("estimateTotal").innerText = formatINR(est.total);
+  if(currentStep === 1){
+    const selectedServices = document.querySelectorAll('#servicesContainer input:checked');
 
-    $("estimatePanel").style.display = "block";
+    if(serviceType.value === ""){
+      showError("Please select service category.");
+      return;
+    }
+
+    if(selectedServices.length === 0){
+      showError("Please select at least one service.");
+      return;
+    }
+  }
+
+  currentStep++;
+  updateForm();
+});
+
+prevBtn.addEventListener("click",()=>{
+  hideError();
+  if(currentStep > 0){
+    currentStep--;
+    updateForm();
+  }
+});
+
+function updateForm(){
+  steps.forEach((step,index)=>{
+    step.classList.toggle("active", index === currentStep);
   });
 
-  $("whatsappBtn").addEventListener("click", () => {
-    const p = buildPayload();
-    const msg = encodeURIComponent(
-      `Hello Crystallite InfoTech,\n\n` +
-      `I request a consultation.\n\n` +
-      `Service: ${p.category} → ${p.subservice}\n` +
-      `Estimate: ${p.estimateText}\n\n` +
-      `Name: ${p.name}\nPhone: ${p.phone}\nEmail: ${p.email}\n\n` +
-      `Details: ${p.details}`
-    );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+  prevBtn.style.display = currentStep === 0 ? "none" : "inline-block";
+  nextBtn.style.display = currentStep === steps.length - 1 ? "none" : "inline-block";
+  submitBtn.style.display = currentStep === steps.length - 1 ? "inline-block" : "none";
+  progress.style.width = ((currentStep + 1) / steps.length) * 100 + "%";
+  stepIndicator.innerHTML = `Step ${currentStep + 1} of ${steps.length}`;
+}
+
+form.addEventListener("submit", async(e)=>{
+  e.preventDefault();
+  hideError();
+
+  const projectDetails = document.getElementById("projectDetails").value.trim();
+
+  if(projectDetails === ""){
+    showError("Please enter project details.");
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = "Submitting...";
+  form.classList.add("loading");
+
+  const selectedServices = [];
+  document.querySelectorAll('#servicesContainer input:checked').forEach((checkbox)=>{
+    selectedServices.push(checkbox.value);
   });
 
-  $("emailBtn").addEventListener("click", () => {
-    const p = buildPayload();
-    const subject = encodeURIComponent("Consultation Request — " + p.subservice);
-    const body = encodeURIComponent(
-      `Hello,\n\nI would like a consultation.\n\n` +
-      `Service: ${p.category} → ${p.subservice}\n` +
-      `Estimated Cost: ${p.estimateText}\n\n` +
-      `Name: ${p.name}\nPhone: ${p.phone}\nEmail: ${p.email}\n\n` +
-      `Project Details:\n${p.details}`
-    );
-    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
-  });
+  const formData = {
+    Full_Name: document.getElementById("fullName").value.trim(),
+    Business_Company_Name: document.getElementById("companyName").value.trim(),
+    Designation_Role: document.getElementById("designation").value.trim(),
+    Phone_Number: document.getElementById("phone").value.trim(),
+    Service_Category: serviceType.value,
+    Services_Required: selectedServices,
+    Budget: document.getElementById("budget").value,
+    Project_Details: projectDetails,
+    Added_Time: new Date().toISOString(),
+    Added_Server_Time: serverTimestamp(),
+    Status: "New Lead"
+  };
 
+  try{
+    await addDoc(collection(db, "Client_Requirements"), formData);
+    console.log("Requirement Submitted");
+    form.style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+  }
+  catch(error){
+    console.error("Firebase Error:", error);
+    showError(error.message);
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Submit Requirement";
+    form.classList.remove("loading");
+  }
+});
 </script>
 </body>
 </html>
-
-
-
-
