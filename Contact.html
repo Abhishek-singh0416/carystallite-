@@ -45,6 +45,116 @@ body{
 
 .page-wrap{max-width:1180px;margin:auto;display:grid;grid-template-columns:380px 1fr;gap:24px;align-items:start;}
 
+     /* ── NAVBAR ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.4));
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .brand:hover { transform: scale(1.05); }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 0 0, #22d3ee, #0ea5e9 40%, #6366f1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f172a;
+      font-weight: 700;
+      box-shadow: 0 0 25px rgba(56,189,248,0.65);
+      font-size: 1.1rem;
+      animation: logo-pulse 3s ease-in-out infinite;
+      overflow: hidden;
+    }
+    @keyframes logo-pulse {
+      0%,100% { box-shadow: 0 0 25px rgba(56,189,248,0.65); }
+      50% { box-shadow: 0 0 40px rgba(56,189,248,0.9); }
+    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-text span:first-child { font-weight: 600; letter-spacing: 0.05em; font-size: 1rem; text-transform: uppercase; }
+    .brand-text span:last-child { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.14em; }
+
+    nav { display: flex; align-items: center; gap: 1.75rem; font-size: 0.92rem; }
+    nav a { color: var(--text-muted); position: relative; transition: color 0.3s ease; }
+    nav a::after {
+      content: ""; position: absolute; left: 0; bottom: -0.25rem;
+      width: 0; height: 2px; border-radius: 8px;
+      background: linear-gradient(to right, #22d3ee, #6366f1);
+      transition: width 0.22s ease-out;
+    }
+    nav a:hover { color: var(--text-main); }
+    nav a:hover::after { width: 20px; }
+
+    .nav-cta {
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(56,189,248,0.4);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.18), rgba(15,23,42,0.9));
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(8,47,73,0.55);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      font-family: inherit;
+    }
+    .nav-cta:hover { transform: translateY(-1px); border-color: #22d3ee; box-shadow: 0 18px 40px rgba(8,47,73,0.88); }
+
+    .nav-toggle { display: none; font-size: 1.4rem; cursor: pointer; transition: all 0.3s ease; color: var(--text-main); background: none; border: none; }
+    .nav-toggle:hover { transform: scale(1.1); color: #22d3ee; }
+    .nav-toggle.active { color: #22d3ee; transform: rotate(90deg); }
+
+    @media (max-width: 768px) {
+      nav { display: none !important; }
+      .nav-toggle { display: block; }
+      .nav-inner { padding-inline: 1.1rem; }
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: rgba(15,23,42,0.97);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      z-index: 30;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.show { max-height: 500px; }
+    .mobile-menu nav { display: flex !important; flex-direction: column; padding: 1rem 1.5rem 1.3rem; gap: 0.8rem; }
+    .mobile-menu nav a { font-size: 0.95rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(148,163,184,0.2); }
+    .mobile-menu nav a:last-of-type { border-bottom: none; }
+    .mobile-menu .nav-cta { width: 100%; justify-content: center; margin-top: 0.5rem; }
+
+    /* ── LAYOUT ── */
+    .page { max-width: 1120px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+
+
 .sidebar,
 .container{
   background:var(--surface);
@@ -178,6 +288,51 @@ button:hover{transform:translateY(-1px);} button:active{transform:translateY(0);
 </style>
 </head>
 <body>
+  <header>
+  <div class="nav-inner">
+    <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="brand-mark">
+        <img src="logo.png" alt="Crystallite InfoTech Logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover;">
+      </div>
+      <div class="brand-text">
+        <span>Crystallite</span>
+        <span>Infotech &amp; Fintech studio</span>
+      </div>
+    </div>
+
+    <nav aria-label="Primary">
+      <a href="service.html">Services</a>
+      <a href="infotech.html">Infotech</a>
+      <a href="fintech.html">FinTech</a>
+      <a href="about.html">About</a>
+      <a href="Blog.html">Blog</a>
+      <a href="Contact.html">Contact</a>
+      <button class="nav-cta" onclick="closeMenu(); window.location.href='consultation.html';">
+        <i class="fa-regular fa-calendar"></i>
+        <span>Get free consultation</span>
+      </button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="service.html" onclick="closeMenu()">Services</a>
+      <a href="infotech.html" onclick="closeMenu()">Infotech</a>
+      <a href="fintech.html" onclick="closeMenu()">FinTech</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="Blog.html" onclick="closeMenu()">Blog</a>
+      <a href="Contact.html" onclick="closeMenu()">Contact</a>
+      <button class="nav-cta" onclick="closeMenu(); window.location.href='consultation.html';">
+        <i class="fa-regular fa-calendar"></i>
+        <span>Get free consultation</span>
+      </button>
+    </nav>
+  </div>
+</header>
 <div class="page-wrap">
   <aside class="sidebar">
     <div class="brand-block">
@@ -525,6 +680,30 @@ prevBtn.addEventListener("click",()=>{
   hideError();
   if(currentStep > 0){ currentStep--; updateForm(); }
 });
+
+   const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMenu() {
+    mobileMenu.classList.remove('show');
+    navToggle.classList.remove('active');
+  }
+
+  navToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mobileMenu.classList.toggle('show');
+    navToggle.classList.toggle('active');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+  });
+
 
 function updateForm(){
   steps.forEach((step,index)=>{ step.classList.toggle("active", index === currentStep); });
