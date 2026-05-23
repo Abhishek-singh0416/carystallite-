@@ -37,9 +37,7 @@
         "logo": "https://crystallite.in/assets/logo.png",
         "email": "crystallite.in@gmail.com",
         "telephone": "+91 76694 86641",
-        "sameAs": [
-          "https://wa.me/917669486641"
-        ]
+        "sameAs": ["https://wa.me/917669486641"]
       },
       {
         "@type": "LocalBusiness",
@@ -101,13 +99,11 @@
     img{max-width:100%;display:block}
     button{font-family:inherit}
     .container{width:min(var(--max), calc(100% - 28px));margin:0 auto}
-
     .skip-link{
       position:absolute;left:-999px;top:10px;
       background:#fff;color:#000;padding:.75rem 1rem;border-radius:10px;z-index:1000
     }
     .skip-link:focus{left:10px}
-
     header{
       position:sticky;top:0;z-index:60;
       backdrop-filter:blur(18px);
@@ -133,7 +129,6 @@
     }
     .brand-text strong{display:block;font-size:1rem;line-height:1.1}
     .brand-text span{display:block;font-size:.72rem;text-transform:uppercase;color:var(--muted);letter-spacing:.16em}
-
     nav.desktop-nav{display:flex;align-items:center;gap:1.25rem;font-size:.93rem}
     nav.desktop-nav a{
       color:var(--muted);position:relative;transition:.25s;
@@ -147,7 +142,6 @@
     nav.desktop-nav a:focus-visible{color:var(--text)}
     nav.desktop-nav a:hover::after,
     nav.desktop-nav a:focus-visible::after{width:100%}
-
     .nav-cta{
       padding:.78rem 1.15rem;border-radius:999px;border:1px solid rgba(34,211,238,.28);
       background:linear-gradient(135deg, rgba(34,211,238,.14), rgba(99,102,241,.12));
@@ -163,13 +157,11 @@
     .nav-toggle:focus-visible,.nav-cta:focus-visible,.btn:focus-visible,.cta-btn:focus-visible{
       outline:2px solid #22d3ee;outline-offset:3px
     }
-
     .backdrop{
       position:fixed;inset:0;background:rgba(3,6,15,.55);
       opacity:0;pointer-events:none;transition:.25s ease;z-index:45
     }
     .backdrop.show{opacity:1;pointer-events:auto}
-
     .mobile-menu{
       position:fixed;top:78px;left:0;right:0;background:rgba(8,14,28,.98);backdrop-filter:blur(18px);
       z-index:50;max-height:0;overflow:hidden;transition:max-height .3s ease-out;border-bottom:1px solid rgba(148,163,184,.2)
@@ -180,7 +172,6 @@
       padding:.7rem 0;border-bottom:1px solid rgba(148,163,184,.16);
       color:var(--text)
     }
-
     .page{padding:1.2rem 0 3rem}
     .hero{
       position:relative;
@@ -228,7 +219,6 @@
     }
     .btn-primary{background:linear-gradient(135deg,#22d3ee,#6366f1,#8b5cf6);color:#07111f}
     .btn-secondary{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
-
     .stats{
       margin-top:2rem;
       display:grid;
@@ -243,7 +233,6 @@
       backdrop-filter:blur(12px);
     }
     .stat strong{display:block;font-size:1.5rem;background:linear-gradient(135deg,#22d3ee,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
     .marquee{
       margin-top:2.2rem;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.03);backdrop-filter:blur(14px)
@@ -256,7 +245,6 @@
       border:1px solid rgba(148,163,184,.15);white-space:nowrap;color:#e2e8f0
     }
     @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
     .section{padding:3rem 0 0}
     .section-title{text-align:center;font-size:clamp(1.75rem,3vw,2.8rem);margin:0 0 1rem}
     .section-subtitle{text-align:center;max-width:900px;margin:0 auto 2rem;color:var(--muted);line-height:1.8}
@@ -274,7 +262,20 @@
       background:linear-gradient(135deg, rgba(34,211,238,.2), rgba(99,102,241,.18), rgba(249,115,22,.16))
     }
     .media img{width:100%;height:100%;object-fit:cover}
-
+    .media-contain{
+      aspect-ratio: 4 / 5;
+      padding: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, rgba(34,211,238,.12), rgba(99,102,241,.12), rgba(249,115,22,.08));
+    }
+    .media-contain img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
     .service-slider{
       display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:1rem;
       overflow-x:auto;padding-bottom:.5rem;scroll-snap-type:x mandatory;
@@ -303,7 +304,6 @@
     .mini-card strong{
       display:block;font-size:1.25rem;margin-bottom:.35rem;background:linear-gradient(135deg,#22d3ee,#6366f1,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent
     }
-
     .info-list{display:grid;gap:1rem}
     .info-item{
       display:flex;align-items:flex-start;gap:.9rem;padding:1rem;border-radius:16px;
@@ -316,7 +316,6 @@
     }
     .info-item strong{display:block;color:#fff;margin-bottom:.15rem}
     .info-item span{color:var(--muted);line-height:1.55;word-break:break-word}
-
     .slider-head{
       display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem;flex-wrap:wrap
     }
@@ -340,7 +339,6 @@
       width:10px;height:10px;border-radius:999px;border:0;background:rgba(255,255,255,.28);cursor:pointer
     }
     .dot.active{background:linear-gradient(135deg,#22d3ee,#6366f1)}
-
     .cta{
       margin-top:2rem;padding:1.7rem;text-align:center;border-radius:24px;
       background:linear-gradient(135deg,#1e3a8a 0%,#6d28d9 50%,#0f766e 100%);
@@ -354,12 +352,10 @@
     }
     .cta-primary{background:linear-gradient(135deg,#22d3ee,#6366f1);color:#07111f}
     .cta-secondary{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
-
     footer{
       max-width:1120px;margin:3rem auto 2rem;padding:1.5rem 1rem 0;border-top:1px solid rgba(148,163,184,.25);
       color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.92rem
     }
-
     @media (max-width: 1024px){
       .stats,.grid-4{grid-template-columns:repeat(2,1fr)}
     }
@@ -540,7 +536,7 @@
 
       <div class="grid-2">
         <div class="card">
-          <div class="media">
+          <div class="media media-contain">
             <img src="Founder Abhishek Singh.png" alt="Abhishek Singh founder of Crystallite Infotech">
           </div>
           <h3 style="margin-top:0">Abhishek Singh</h3>
@@ -565,7 +561,7 @@
 
     <section class="section" id="projects">
       <h2 class="section-title">Projects & Case Studies</h2>
-      
+      <p class="section-subtitle">Showcasing select builds and digital solutions.</p>
 
       <div class="grid-2">
         <div class="card">
@@ -645,7 +641,7 @@
 
     <section class="section" id="gst-udyam">
       <h2 class="section-title">GST & Udyam</h2>
-    
+      <p class="section-subtitle">Business registration details for credibility and SEO.</p>
 
       <div class="grid-2">
         <div class="card"><h3>GST Details</h3><p style="color:var(--muted);line-height:1.85;margin-bottom:0">GST Number: 06EOYPS9615R1ZE</p></div>
@@ -754,7 +750,7 @@
       if (resetTimer) restartAuto();
     }
 
-    function nextSlide() {
+    function nextSlideFn() {
       index = (index + 1) % slides.length;
       updateSlider();
     }
@@ -765,7 +761,7 @@
     }
 
     function startAuto() {
-      autoTimer = setInterval(nextSlide, 4500);
+      autoTimer = setInterval(nextSlideFn, 4500);
     }
 
     function restartAuto() {
@@ -779,7 +775,7 @@
     });
 
     nextBtn.addEventListener('click', () => {
-      nextSlide();
+      nextSlideFn();
       restartAuto();
     });
 
